@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include gplast *.css
+recursive-include gplast *.csv
+recursive-include gplast *.html
+recursive-include gplast *.ico
+recursive-include gplast *.js
+recursive-include gplast *.json
+recursive-include gplast *.md
+recursive-include gplast *.png
+recursive-include gplast *.py
+recursive-include gplast *.svg
+recursive-include gplast *.txt
+recursive-exclude gplast *.pyc
