@@ -1,0 +1,294 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "OD-.#####",
+ "creation": "2023-06-05 12:04:27.531423",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "html",
+  "approval_mark",
+  "section_break_5pdlv",
+  "series",
+  "section_break_52i9j",
+  "od_date",
+  "to_date",
+  "total_number_of_days",
+  "session",
+  "column_break_y8yuo",
+  "from_time",
+  "to_time",
+  "section_break_if8iz",
+  "multi_employee",
+  "section_break_mcoq9",
+  "employee",
+  "employee_name",
+  "employee_type",
+  "department",
+  "column_break_v0jar",
+  "grade",
+  "company",
+  "whom_to_meet",
+  "section_break_hy7ug",
+  "address",
+  "person_to_meet",
+  "company_name",
+  "address1",
+  "office_name",
+  "address2",
+  "purpose",
+  "column_break_kmpw3",
+  "posting_date",
+  "follow_via_email",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "html",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "approval_mark",
+   "fieldtype": "HTML",
+   "label": "Approval Mark"
+  },
+  {
+   "fieldname": "section_break_5pdlv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "\nOD/"
+  },
+  {
+   "fieldname": "section_break_52i9j",
+   "fieldtype": "Section Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "od_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "OD Date",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "To Date",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "total_number_of_days",
+   "fieldtype": "Data",
+   "label": "Total Number of Days",
+   "read_only": 1
+  },
+  {
+   "fieldname": "session",
+   "fieldtype": "Select",
+   "label": "Session",
+   "options": "\nFull Day\nFirst Half\nSecond Half\nFlexible",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_y8yuo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.session == \"Flexible\"",
+   "fieldname": "from_time",
+   "fieldtype": "Time",
+   "label": "From TIme",
+   "mandatory_depends_on": "eval:doc.session == \"Flexible\"",
+   "read_only_depends_on": "// eval:doc.session == \"Flexible\"",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.session == \"Flexible\"",
+   "fieldname": "to_time",
+   "fieldtype": "Time",
+   "label": "To Time",
+   "mandatory_depends_on": "eval:doc.session == \"Flexible\"",
+   "read_only_depends_on": "// eval:doc.session != 'Flexible'",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_if8iz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "multi_employee",
+   "fieldtype": "Table",
+   "label": "Employee",
+   "options": "Multi Employee"
+  },
+  {
+   "fieldname": "section_break_mcoq9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Read Only",
+   "label": "Employee Name"
+  },
+  {
+   "fetch_from": "employee.employment_type",
+   "fetch_if_empty": 1,
+   "fieldname": "employee_type",
+   "fieldtype": "Link",
+   "label": "Employee Type",
+   "options": "Employment Type"
+  },
+  {
+   "fetch_from": "request_by_employee_id.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "column_break_v0jar",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "grade",
+   "fieldtype": "Read Only",
+   "label": "Grade"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "whom_to_meet",
+   "fieldtype": "Select",
+   "label": "whom to Meet",
+   "options": "\nCompany\nGovernment office\nPerson"
+  },
+  {
+   "fieldname": "section_break_hy7ug",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.whom_to_meet ==\"Person\"",
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "depends_on": "eval:doc.whom_to_meet ==\"Person\"",
+   "fieldname": "person_to_meet",
+   "fieldtype": "Data",
+   "label": "Person to meet",
+   "mandatory_depends_on": "eval:doc.whom_to_meet ==\"Person\""
+  },
+  {
+   "depends_on": "eval:doc.whom_to_meet ==\"Company\"",
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "label": "Company Name"
+  },
+  {
+   "depends_on": "eval:doc.whom_to_meet ==\"Company\"",
+   "fieldname": "address1",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "depends_on": "eval:doc.whom_to_meet ==\"Government Office\"",
+   "fieldname": "office_name",
+   "fieldtype": "Data",
+   "label": "Office Name"
+  },
+  {
+   "depends_on": "eval:doc.whom_to_meet ==\"Government Office\"",
+   "fieldname": "address2",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "depends_on": "eval:doc.whom_to_meet",
+   "fieldname": "purpose",
+   "fieldtype": "Small Text",
+   "label": "Purpose"
+  },
+  {
+   "fieldname": "column_break_kmpw3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "default": "0",
+   "fieldname": "follow_via_email",
+   "fieldtype": "Check",
+   "label": "Follow via Email"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "On Duty Application",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "On Duty Application",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-06-05 14:54:05.979459",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "On Duty Application",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
