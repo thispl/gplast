@@ -8,6 +8,7 @@
  "engine": "InnoDB",
  "field_order": [
   "department",
+  "hod",
   "column_break_2",
   "from_date",
   "to_date",
@@ -21,8 +22,7 @@
   "column_break_12",
   "error_preview",
   "section_break_14",
-  "csv_preview",
-  "amended_from"
+  "csv_preview"
  ],
  "fields": [
   {
@@ -120,13 +120,21 @@
    "options": "Shift Schedule",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fetch_from": "department.hod",
+   "fieldname": "hod",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "HOD",
+   "options": "User"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-07-11 17:00:38.982216",
+ "modified": "2025-04-08 15:28:49.693658",
  "modified_by": "Administrator",
  "module": "GPLAST",
  "name": "Shift Schedule",

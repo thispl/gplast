@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-09-28 16:27:43.379414",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "exam",
+  "school",
+  "board",
+  "subject",
+  "from_date",
+  "to_date",
+  "degree_type",
+  "class",
+  "mark_percentage",
+  "year_of_passing"
+ ],
+ "fields": [
+  {
+   "fieldname": "exam",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Examination passed ",
+   "options": "Examination Passed"
+  },
+  {
+   "fieldname": "school",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "School/College/Institute (in the same order)"
+  },
+  {
+   "fieldname": "board",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "University / Board "
+  },
+  {
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Major  Subjects"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "From Date"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "To Date"
+  },
+  {
+   "fieldname": "class",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "  Class / Division %"
+  },
+  {
+   "fieldname": "mark_percentage",
+   "fieldtype": "Percent",
+   "label": "Mark Percentage"
+  },
+  {
+   "fieldname": "degree_type",
+   "fieldtype": "Data",
+   "label": "Degree Type"
+  },
+  {
+   "fieldname": "year_of_passing",
+   "fieldtype": "Data",
+   "label": "Year of Passing"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-05-31 22:01:34.256235",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Education Child",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

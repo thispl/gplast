@@ -1,0 +1,73 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-09-29 11:30:34.921135",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "organisation",
+  "designation",
+  "from_date",
+  "to_date",
+  "brief_description_of_responsibilities",
+  "last_salary_drawn",
+  "reason_for_leaving"
+ ],
+ "fields": [
+  {
+   "fieldname": "organisation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": " Organisation"
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Designation"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "From Date"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "To Date"
+  },
+  {
+   "fieldname": "brief_description_of_responsibilities",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Brief description of responsibilities including reporting relationships"
+  },
+  {
+   "fieldname": "last_salary_drawn",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Last Salary Drawn"
+  },
+  {
+   "fieldname": "reason_for_leaving",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Reason for leaving"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-09-29 11:33:37.522630",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Work History",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

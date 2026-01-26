@@ -1,0 +1,49 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-04 12:52:33.238336",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "device_serial_number",
+  "device_name",
+  "log_type"
+ ],
+ "fields": [
+  {
+   "fieldname": "device_serial_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Device Serial Number",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "device_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Device Name"
+  },
+  {
+   "fieldname": "log_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Log Type",
+   "options": "IN\nOUT",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-12-04 12:55:03.428864",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Biometric Device Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

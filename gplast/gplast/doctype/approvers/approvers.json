@@ -1,0 +1,350 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:HR-APP-{YYYY}-{#####}",
+ "creation": "2025-05-30 12:27:15.697087",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "column_break_zqzer",
+  "department",
+  "designation",
+  "designation_code",
+  "section_break_zjcvq",
+  "approver_1",
+  "approver_2",
+  "approver_3",
+  "approver_4",
+  "column_break_bsozq",
+  "total_number_of_approvers",
+  "shift_group",
+  "eligibility",
+  "over_time__shift_change_request_section",
+  "level_1",
+  "level_2",
+  "level_3",
+  "level_4",
+  "column_break_9rjae",
+  "total_approver",
+  "section_break_xoi7v",
+  "level_approver_1",
+  "level_approver_2",
+  "level_approver_3",
+  "level_approver_4",
+  "column_break_guhwe",
+  "total_number_of_level_approvers",
+  "relieving_tab",
+  "relieving_approver_1",
+  "relieving_approver_2",
+  "relieving_approver_3",
+  "relieving_approver_4",
+  "column_break_wxig0",
+  "relieving_total_approver",
+  "expense_claim_tab",
+  "expense_approver_1",
+  "expense_approver_2",
+  "expense_approver_3",
+  "expense_approver_4",
+  "column_break_5oxiw",
+  "expense_total_approver"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Employee Name"
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Read Only",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Department"
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Read Only",
+   "label": "Designation"
+  },
+  {
+   "fetch_from": "employee.designation_code",
+   "fieldname": "designation_code",
+   "fieldtype": "Read Only",
+   "label": "Designation Code"
+  },
+  {
+   "fieldname": "column_break_zqzer",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_zjcvq",
+   "fieldtype": "Section Break",
+   "label": "Leave / On Duty / Permission / Missed Punch / Compensatory Off"
+  },
+  {
+   "fieldname": "approver_1",
+   "fieldtype": "Link",
+   "label": "Approver 1",
+   "options": "User"
+  },
+  {
+   "depends_on": "eval:doc.approver_1",
+   "fieldname": "approver_2",
+   "fieldtype": "Link",
+   "label": "Approver 2",
+   "options": "User"
+  },
+  {
+   "depends_on": "eval:doc.approver_2",
+   "fieldname": "approver_3",
+   "fieldtype": "Link",
+   "label": "Approver 3",
+   "options": "User"
+  },
+  {
+   "depends_on": "eval:doc.approver_3",
+   "fieldname": "approver_4",
+   "fieldtype": "Link",
+   "label": "Approver 4",
+   "options": "User"
+  },
+  {
+   "fieldname": "total_number_of_approvers",
+   "fieldtype": "Int",
+   "label": "Total Number of Approvers"
+  },
+  {
+   "fieldname": "column_break_bsozq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.shift_group == 'Rotational' || doc.eligibility == 'Over Time'",
+   "fieldname": "over_time__shift_change_request_section",
+   "fieldtype": "Tab Break",
+   "label": "Over Time / Shift Change Request"
+  },
+  {
+   "fieldname": "level_1",
+   "fieldtype": "Link",
+   "label": "Level 1",
+   "options": "User"
+  },
+  {
+   "depends_on": "eval:doc.level_1",
+   "fieldname": "level_2",
+   "fieldtype": "Link",
+   "label": "Level 2",
+   "options": "User"
+  },
+  {
+   "depends_on": "eval:doc.level_2",
+   "fieldname": "level_3",
+   "fieldtype": "Link",
+   "label": "Level 3",
+   "options": "User"
+  },
+  {
+   "depends_on": "eval:doc.level_3",
+   "fieldname": "level_4",
+   "fieldtype": "Link",
+   "label": "Level 4",
+   "options": "User"
+  },
+  {
+   "fieldname": "total_approver",
+   "fieldtype": "Int",
+   "label": "Total Approver"
+  },
+  {
+   "fieldname": "column_break_9rjae",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_xoi7v",
+   "fieldtype": "Tab Break",
+   "label": "Resignation"
+  },
+  {
+   "fieldname": "level_approver_1",
+   "fieldtype": "Link",
+   "label": "Level Approver 1",
+   "options": "User"
+  },
+  {
+   "depends_on": "eval:doc.level_approver_1",
+   "fieldname": "level_approver_2",
+   "fieldtype": "Link",
+   "label": "Level Approver 2",
+   "options": "User"
+  },
+  {
+   "depends_on": "eval:doc.level_approver_2",
+   "fieldname": "level_approver_3",
+   "fieldtype": "Link",
+   "label": "Level Approver 3",
+   "options": "User"
+  },
+  {
+   "depends_on": "eval:doc.level_approver_3",
+   "fieldname": "level_approver_4",
+   "fieldtype": "Link",
+   "label": "Level Approver 4",
+   "options": "User"
+  },
+  {
+   "fieldname": "total_number_of_level_approvers",
+   "fieldtype": "Int",
+   "label": "Total Number of Level Approvers"
+  },
+  {
+   "fieldname": "column_break_guhwe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "relieving_tab",
+   "fieldtype": "Tab Break",
+   "label": "Relieving"
+  },
+  {
+   "fieldname": "relieving_approver_1",
+   "fieldtype": "Link",
+   "label": "Relieving Approver 1",
+   "options": "User"
+  },
+  {
+   "depends_on": "eval:doc.relieving_approver_1",
+   "fieldname": "relieving_approver_2",
+   "fieldtype": "Link",
+   "label": "Relieving Approver 2",
+   "options": "User"
+  },
+  {
+   "depends_on": "eval:doc.relieving_approver_2",
+   "fieldname": "relieving_approver_3",
+   "fieldtype": "Link",
+   "label": "Relieving Approver 3",
+   "options": "User"
+  },
+  {
+   "depends_on": "eval:doc.relieving_approver_3",
+   "fieldname": "relieving_approver_4",
+   "fieldtype": "Link",
+   "label": "Relieving Approver 4",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_wxig0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "relieving_total_approver",
+   "fieldtype": "Int",
+   "label": "Relieving Total Approver"
+  },
+  {
+   "fieldname": "expense_claim_tab",
+   "fieldtype": "Tab Break",
+   "label": "Expense Claim"
+  },
+  {
+   "fieldname": "expense_approver_1",
+   "fieldtype": "Link",
+   "label": "Expense Approver 1",
+   "options": "User"
+  },
+  {
+   "depends_on": "eval:doc.expense_approver_1",
+   "fieldname": "expense_approver_2",
+   "fieldtype": "Link",
+   "label": "Expense Approver 2",
+   "options": "User"
+  },
+  {
+   "depends_on": "eval:doc.expense_approver_2",
+   "fieldname": "expense_approver_3",
+   "fieldtype": "Link",
+   "label": "Expense Approver 3",
+   "options": "User"
+  },
+  {
+   "depends_on": "eval:doc.expense_approver_3",
+   "fieldname": "expense_approver_4",
+   "fieldtype": "Link",
+   "label": "Expense Approver 4",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_5oxiw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "expense_total_approver",
+   "fieldtype": "Int",
+   "label": "Expense Total Approver"
+  },
+  {
+   "fetch_from": "employee.shift_group",
+   "fetch_if_empty": 1,
+   "fieldname": "shift_group",
+   "fieldtype": "Read Only",
+   "hidden": 1,
+   "label": "Shift Group"
+  },
+  {
+   "fetch_from": "employee.ot_eligibility",
+   "fetch_if_empty": 1,
+   "fieldname": "eligibility",
+   "fieldtype": "Read Only",
+   "hidden": 1,
+   "label": "Eligibility"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-12-20 16:02:28.222008",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Approvers",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

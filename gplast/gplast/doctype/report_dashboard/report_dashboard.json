@@ -1,0 +1,146 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-10-28 14:12:23.471042",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "report",
+  "contractor_name",
+  "employment_type",
+  "company",
+  "employee",
+  "company1",
+  "unit",
+  "column_break_cw7uf",
+  "status",
+  "from_date",
+  "to_date",
+  "department",
+  "company_address",
+  "download"
+ ],
+ "fields": [
+  {
+   "depends_on": "eval:doc.report == 'Muster Roll Report' || doc.report == \"Shift Register Report 1\" || doc.report == \"Shift Register Report 2\" || doc.report == \"Form 12\" || doc.report == \"Form 25\" || doc.report == \"Leave Credit Report\" || doc.report == \"Leave Wages\" ",
+   "fieldname": "company1",
+   "fieldtype": "Link",
+   "label": "Company",
+   "mandatory_depends_on": "eval:doc.report == 'Muster Roll Report'",
+   "options": "Company"
+  },
+  {
+   "depends_on": "eval:doc.report!=\"Form 12\" || doc.report!=\"Leave Encashment\"",
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date"
+  },
+  {
+   "depends_on": "eval:doc.report!=\"Form 12\" || doc.report!=\"Leave Encashment\"",
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date"
+  },
+  {
+   "default": "GPLAST",
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Company"
+  },
+  {
+   "fieldname": "column_break_cw7uf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.report != \"Form 12\" && doc.report !=\"Leave Credit Report\"&& doc.report !=\"Leave Wages\"",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Status",
+   "options": "\nDraft\nSubmitted\nCancelled"
+  },
+  {
+   "fieldname": "report",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Report",
+   "options": "\nMonthly Salary Register\nMonthly Salary Register - Contractor\nPF Report\nMuster Roll Report\nShift Register Report 1\nShift Register Report 2\nForm 12\nForm 25\nLeave Credit Report\nLeave Wages\nBonus Report\nLeave Encashment\nShift Wise Present Count Report\nDepartment Wise OT Report\nDaily Strength Report\nDepartment & Shift Wise Present\nOverall CTC Report\nESI Report",
+   "reqd": 1
+  },
+  {
+   "fieldname": "download",
+   "fieldtype": "Button",
+   "label": "Download"
+  },
+  {
+   "fieldname": "company_address",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Company Description"
+  },
+  {
+   "depends_on": "eval:doc.report == \"Shift Register Report 1\" ||  doc.report == 'Muster Roll Report' || doc.report == \"Shift Register Report 2\" ||  doc.report == 'Form 25' ||  doc.report == 'Leave Credit Report' ||  doc.report == 'Leave Wages'",
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "depends_on": "eval:doc.report==\"Leave Wages\" || doc.report == \"Department & Shift Wise Present\"",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "depends_on": "eval:doc.report==\"Leave Encashment\"",
+   "fieldname": "employment_type",
+   "fieldtype": "Link",
+   "label": "Employment Type",
+   "mandatory_depends_on": "eval:doc.report==\"Leave Encashment\"",
+   "options": "Employment Type"
+  },
+  {
+   "depends_on": "eval:doc.report == \"Department Wise OT Report\" || doc.report == \"Daily Strength Report\"",
+   "fieldname": "unit",
+   "fieldtype": "Link",
+   "label": "Unit",
+   "mandatory_depends_on": "eval:doc.report == \"Daily Strength Report\"",
+   "options": "UNIT"
+  },
+  {
+   "depends_on": "eval:doc.report==\"Monthly Salary Register - Contractor\" || doc.report =='Overall CTC Report'",
+   "fieldname": "contractor_name",
+   "fieldtype": "Link",
+   "label": "Contractor Name",
+   "mandatory_depends_on": "eval:doc.report==\"Monthly Salary Register - Contractor\"",
+   "options": "Contractor Name"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-01-22 14:40:56.006358",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Report Dashboard",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

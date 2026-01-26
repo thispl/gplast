@@ -1,0 +1,184 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "ATR-.####",
+ "creation": "2025-01-04 19:30:13.566427",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "column_break_3",
+  "department",
+  "desigantion",
+  "section_break_19",
+  "date",
+  "working_hours",
+  "column_break_8",
+  "benefits",
+  "section_break_11",
+  "1_wage",
+  "15_wages_section",
+  "15_wages",
+  "section_break_14",
+  "double_wages",
+  "section_break_16",
+  "comp_off_leave",
+  "section_break_28",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Read Only",
+   "label": "Department"
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "desigantion",
+   "fieldtype": "Read Only",
+   "label": "Desigantion"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.benefits =='Double Wage'",
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break",
+   "label": "Double Wages"
+  },
+  {
+   "fieldname": "double_wages",
+   "fieldtype": "Float",
+   "label": "Double Wages"
+  },
+  {
+   "depends_on": "eval:doc.benefits =='1 Wage'",
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break",
+   "label": "1 Wage"
+  },
+  {
+   "depends_on": "eval:doc.benefits =='COFF'",
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break",
+   "label": "Comp. off Leave"
+  },
+  {
+   "fieldname": "section_break_28",
+   "fieldtype": "Section Break",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "label": "Remarks",
+   "length": 250
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Employee Benefits Regularization",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "1_wage",
+   "fieldtype": "Float",
+   "label": "1 Wage"
+  },
+  {
+   "depends_on": "eval:doc.benefits =='1.5 Wages'",
+   "fieldname": "15_wages_section",
+   "fieldtype": "Section Break",
+   "label": "1.5 Wages"
+  },
+  {
+   "fieldname": "15_wages",
+   "fieldtype": "Float",
+   "label": "1.5 Wages"
+  },
+  {
+   "fieldname": "comp_off_leave",
+   "fieldtype": "Float",
+   "label": "Comp. off Leave"
+  },
+  {
+   "fieldname": "benefits",
+   "fieldtype": "Select",
+   "label": "Benefits",
+   "options": "\n1 Wage\n1.5 Wages\nDouble Wage\nCOFF"
+  },
+  {
+   "fieldname": "working_hours",
+   "fieldtype": "Float",
+   "label": "Working Hours"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-01-06 18:54:40.681700",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Employee Benefits Regularization",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

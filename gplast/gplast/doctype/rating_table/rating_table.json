@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-09-29 14:33:52.686795",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "department",
+  "rating",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee Name"
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Department"
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "in_list_view": 1,
+   "label": "Rating"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-09-29 14:46:11.806919",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Rating Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,32 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2023-07-19 10:51:14.596705",
+ "disable_prepared_report": 0,
+ "disabled": 1,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2025-06-02 19:52:50.551811",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Late Entry Report",
+ "owner": "Administrator",
+ "prepared_report": 1,
+ "ref_doctype": "Attendance",
+ "report_name": "Late Entry Report",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "HR User"
+  },
+  {
+   "role": "HR Manager"
+  }
+ ]
+}

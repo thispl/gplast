@@ -1,0 +1,672 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "INC-.#####",
+ "creation": "2025-06-02 15:19:40.476178",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "amended_from",
+  "employee_name",
+  "department",
+  "column_break_sd94k",
+  "designation",
+  "employee_category",
+  "increment_by",
+  "section_break_bv2w9",
+  "basic",
+  "cca",
+  "house_rent_allowance",
+  "conveyance_allowance",
+  "medical_allowances",
+  "shift_allowance",
+  "column_break_vby4t",
+  "special_allowance",
+  "other_allowance",
+  "arrear_basic",
+  "arrear_hra",
+  "uniform_allowance",
+  "magazine_allowances",
+  "salary_total",
+  "percentage_details_section",
+  "total_amount",
+  "basic_percent",
+  "cca_percent",
+  "hra_percent",
+  "conveyance_allowance_percent",
+  "medical_allowances_percent",
+  "column_break_n728p",
+  "special_allowance_percent",
+  "shift_allowance_percent",
+  "other_allowance_percent",
+  "arrear_basic_percent",
+  "arrear_hra_percent",
+  "uniform_allowance_percent",
+  "magazine_allowances_percent",
+  "total_percent",
+  "revised_salary_details_section",
+  "revised_basic",
+  "revised_cca",
+  "revised_hra",
+  "revised_conveyance_allowance",
+  "revised_allowances",
+  "column_break_lrxic",
+  "revised_special_allowance",
+  "revised_other_allowance",
+  "revised_total",
+  "revised_shift_allowance",
+  "revised_arrear_basic",
+  "revised_arrear_hra",
+  "revised_uniform_allowance",
+  "revised_magazine_allowance",
+  "revised_details_section",
+  "revise_basic",
+  "revise_cca",
+  "revise_hra",
+  "revise_special_allowance",
+  "revise_conveyance_allowance",
+  "column_break_pwc7c",
+  "revise_allowances",
+  "revise_total",
+  "revise_shift_allowance",
+  "revise_other_allowance",
+  "revise_arrear_basic",
+  "revise_arrear_hra",
+  "revise_uniform_allowance",
+  "revise_magazine_allowance"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Salary Increment",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_sd94k",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.employee_category",
+   "fieldname": "employee_category",
+   "fieldtype": "Link",
+   "label": "Employee Category",
+   "options": "Employee Category",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_bv2w9",
+   "fieldtype": "Section Break",
+   "label": "Current Salary",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "employee.basic",
+   "fetch_if_empty": 1,
+   "fieldname": "basic",
+   "fieldtype": "Float",
+   "label": "Basic",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "employee.cca",
+   "fetch_if_empty": 1,
+   "fieldname": "cca",
+   "fieldtype": "Float",
+   "label": "CCA",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "employee.house_rent_allowance",
+   "fetch_if_empty": 1,
+   "fieldname": "house_rent_allowance",
+   "fieldtype": "Float",
+   "label": "House Rent Allowance",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "employee.special_allowance",
+   "fetch_if_empty": 1,
+   "fieldname": "special_allowance",
+   "fieldtype": "Float",
+   "label": "Special Allowance",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "employee.conveyance_allowance",
+   "fetch_if_empty": 1,
+   "fieldname": "conveyance_allowance",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Conveyance Allowance",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "employee.medical_allowances",
+   "fetch_if_empty": 1,
+   "fieldname": "medical_allowances",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Medical Allowances",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "employee.shift_allowance",
+   "fetch_if_empty": 1,
+   "fieldname": "shift_allowance",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Shift Allowance",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_vby4t",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": "employee.other_allowance",
+   "fetch_if_empty": 1,
+   "fieldname": "other_allowance",
+   "fieldtype": "Float",
+   "label": "Other Allowance",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "employee.arrear",
+   "fetch_if_empty": 1,
+   "fieldname": "arrear_basic",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Arrear Basic",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "employee.arrear_hra",
+   "fetch_if_empty": 1,
+   "fieldname": "arrear_hra",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Arrear HRA",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "employee.uniform_allowance",
+   "fetch_if_empty": 1,
+   "fieldname": "uniform_allowance",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Uniform Allowance",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "employee.magazine_allowances",
+   "fetch_if_empty": 1,
+   "fieldname": "magazine_allowances",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Magazine Allowances",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "employee.salary_total",
+   "fetch_if_empty": 1,
+   "fieldname": "salary_total",
+   "fieldtype": "Float",
+   "label": "Salary Total",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "increment_by",
+   "fieldtype": "Select",
+   "label": "Increment By",
+   "options": "\nPercentage\nAmount",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.increment_by=='Percentage'",
+   "fieldname": "percentage_details_section",
+   "fieldtype": "Section Break",
+   "label": "Percentage Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "basic_percent",
+   "fieldtype": "Percent",
+   "label": "Basic Percent",
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "cca_percent",
+   "fieldtype": "Percent",
+   "label": "CCA Percent",
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "hra_percent",
+   "fieldtype": "Percent",
+   "label": "HRA Percent",
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "special_allowance_percent",
+   "fieldtype": "Percent",
+   "label": "Special Allowance Percent",
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "conveyance_allowance_percent",
+   "fieldtype": "Percent",
+   "hidden": 1,
+   "label": "Conveyance Allowance Percent",
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "medical_allowances_percent",
+   "fieldtype": "Percent",
+   "hidden": 1,
+   "label": "Medical Allowances Percent",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_n728p",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "shift_allowance_percent",
+   "fieldtype": "Percent",
+   "hidden": 1,
+   "label": "Shift Allowance Percent",
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "other_allowance_percent",
+   "fieldtype": "Percent",
+   "label": "Other Allowance Percent",
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "arrear_basic_percent",
+   "fieldtype": "Percent",
+   "hidden": 1,
+   "label": "Arrear Basic Percent",
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "arrear_hra_percent",
+   "fieldtype": "Percent",
+   "hidden": 1,
+   "label": "Arrear HRA Percent",
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "uniform_allowance_percent",
+   "fieldtype": "Percent",
+   "hidden": 1,
+   "label": "Uniform Allowance Percent",
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "magazine_allowances_percent",
+   "fieldtype": "Percent",
+   "hidden": 1,
+   "label": "Magazine Allowances Percent",
+   "precision": "2"
+  },
+  {
+   "depends_on": "eval:doc.increment_by=='Amount'",
+   "fieldname": "revised_salary_details_section",
+   "fieldtype": "Section Break",
+   "label": "Increment Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "revised_basic",
+   "fieldtype": "Float",
+   "label": "Revised Basic",
+   "precision": "2",
+   "read_only_depends_on": "eval:doc.increment_by=='Percentage'"
+  },
+  {
+   "default": "0",
+   "fieldname": "revised_cca",
+   "fieldtype": "Float",
+   "label": "Revised CCA",
+   "precision": "2",
+   "read_only_depends_on": "eval:doc.increment_by=='Percentage'"
+  },
+  {
+   "default": "0",
+   "fieldname": "revised_hra",
+   "fieldtype": "Float",
+   "label": "Revised HRA",
+   "precision": "2",
+   "read_only_depends_on": "eval:doc.increment_by=='Percentage'"
+  },
+  {
+   "default": "0",
+   "fieldname": "revised_special_allowance",
+   "fieldtype": "Float",
+   "label": "Revised Special Allowance",
+   "precision": "2",
+   "read_only_depends_on": "eval:doc.increment_by=='Percentage'"
+  },
+  {
+   "default": "0",
+   "fieldname": "revised_conveyance_allowance",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Revised Conveyance Allowance",
+   "precision": "2",
+   "read_only_depends_on": "eval:doc.increment_by=='Percentage'"
+  },
+  {
+   "default": "0",
+   "fieldname": "revised_allowances",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Revised Allowances",
+   "precision": "2",
+   "read_only_depends_on": "eval:doc.increment_by=='Percentage'"
+  },
+  {
+   "default": "0",
+   "fieldname": "revised_shift_allowance",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Revised Shift Allowance",
+   "precision": "2",
+   "read_only_depends_on": "eval:doc.increment_by=='Percentage'"
+  },
+  {
+   "default": "0",
+   "fieldname": "revised_other_allowance",
+   "fieldtype": "Float",
+   "label": "Revised Other Allowance",
+   "precision": "2",
+   "read_only_depends_on": "eval:doc.increment_by=='Percentage'"
+  },
+  {
+   "default": "0",
+   "fieldname": "revised_arrear_basic",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Revised Arrear Basic",
+   "precision": "2",
+   "read_only_depends_on": "eval:doc.increment_by=='Percentage'"
+  },
+  {
+   "default": "0",
+   "fieldname": "revised_arrear_hra",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Revised Arrear HRA",
+   "precision": "2",
+   "read_only_depends_on": "eval:doc.increment_by=='Percentage'"
+  },
+  {
+   "default": "0",
+   "fieldname": "revised_uniform_allowance",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Revised Uniform Allowance",
+   "precision": "2",
+   "read_only_depends_on": "eval:doc.increment_by=='Percentage'"
+  },
+  {
+   "default": "0",
+   "fieldname": "revised_magazine_allowance",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Revised Magazine Allowance",
+   "precision": "2",
+   "read_only_depends_on": "eval:doc.increment_by=='Percentage'"
+  },
+  {
+   "fieldname": "column_break_lrxic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "revised_total",
+   "fieldtype": "Float",
+   "label": "Revised Total",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_amount",
+   "fieldtype": "Float",
+   "label": "Total Amount",
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_percent",
+   "fieldtype": "Percent",
+   "label": "Total Percent",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "revised_details_section",
+   "fieldtype": "Section Break",
+   "label": "Revised Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "revise_basic",
+   "fieldtype": "Currency",
+   "label": "Revised Basic",
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "revise_cca",
+   "fieldtype": "Currency",
+   "label": "Revised CCA",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "revise_hra",
+   "fieldtype": "Currency",
+   "label": "Revised HRA",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "revise_special_allowance",
+   "fieldtype": "Currency",
+   "label": "Revised Special Allowance",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "revise_conveyance_allowance",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Revised Conveyance Allowance",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "revise_allowances",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Revised Allowances",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "revise_total",
+   "fieldtype": "Currency",
+   "label": "Revised Total",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_pwc7c",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "revise_shift_allowance",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Revised Shift Allowance",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "revise_other_allowance",
+   "fieldtype": "Currency",
+   "label": "Revised Other Allowance",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "revise_arrear_basic",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Revised Arrear Basic",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "revise_arrear_hra",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Revised Arrear HRA",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "revise_uniform_allowance",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Revised Uniform Allowance",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "revise_magazine_allowance",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Revised Magazine Allowance",
+   "precision": "2",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-09-27 13:19:48.772792",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Salary Increment",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

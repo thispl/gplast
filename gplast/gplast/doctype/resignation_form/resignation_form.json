@@ -1,0 +1,173 @@
+{
+ "actions": [],
+ "autoname": "RES - .#####",
+ "creation": "2025-01-31 14:15:36.531426",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "department",
+  "reports_to",
+  "reporting_to",
+  "date_of_joining",
+  "posting_date",
+  "column_break_werw2",
+  "requested_relieving_date",
+  "relieving_date",
+  "reason",
+  "hods_relieving_date",
+  "attach",
+  "test",
+  "amended_from",
+  "forwarded_details_tab",
+  "employee_permission"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Resignation Form",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.reports_to",
+   "fieldname": "reports_to",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Reports To",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reporting_to",
+   "fieldtype": "Link",
+   "label": "Reporting To",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.date_of_joining",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "label": "Date of Joining",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Resignation Submit Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_werw2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "requested_relieving_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Requested Relieving Date"
+  },
+  {
+   "depends_on": "eval: frappe.user.has_role(\"HR User\")",
+   "fieldname": "relieving_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Relieving Date"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason for Resignation",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:frappe.user.has_role(\"HOD\")",
+   "fieldname": "hods_relieving_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "HOD Recommended Date"
+  },
+  {
+   "fieldname": "attach",
+   "fieldtype": "Attach",
+   "label": "Attach",
+   "reqd": 1
+  },
+  {
+   "fieldname": "test",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "test"
+  },
+  {
+   "depends_on": "eval: doc.workflow_state == \"Forwarded\"",
+   "fieldname": "forwarded_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Forwarded Details"
+  },
+  {
+   "fieldname": "employee_permission",
+   "fieldtype": "Table",
+   "label": "Forwarded Details",
+   "options": "Workflow Employee Permission"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-01-12 12:20:55.092093",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Resignation Form",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:conditions",
+ "creation": "2023-09-30 10:36:43.426146",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "order",
+  "conditions",
+  "option_1",
+  "option_2",
+  "option_3",
+  "option_4"
+ ],
+ "fields": [
+  {
+   "fieldname": "conditions",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Conditions",
+   "unique": 1
+  },
+  {
+   "fieldname": "option_1",
+   "fieldtype": "Link",
+   "label": "Option 1",
+   "options": "Options"
+  },
+  {
+   "fieldname": "option_2",
+   "fieldtype": "Link",
+   "label": "Option 2",
+   "options": "Options"
+  },
+  {
+   "fieldname": "option_3",
+   "fieldtype": "Link",
+   "label": "Option 3",
+   "options": "Options"
+  },
+  {
+   "fieldname": "option_4",
+   "fieldtype": "Link",
+   "label": "Option 4",
+   "options": "Options"
+  },
+  {
+   "fieldname": "order",
+   "fieldtype": "Int",
+   "label": "Order"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-25 18:20:29.198403",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Conditions",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

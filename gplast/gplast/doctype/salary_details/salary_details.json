@@ -1,0 +1,293 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-06-17 11:55:51.293296",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "gross_salary",
+  "increment_amount",
+  "revised_gross_salary",
+  "column_break_rro7x",
+  "reference_document",
+  "salary_increment_date",
+  "increment_type",
+  "section_break_0wadz",
+  "basic",
+  "house_rent_allowance",
+  "cca",
+  "conveyance_allowance",
+  "special_allowance",
+  "column_break_tvbp5",
+  "medical_allowances",
+  "shift_allowance",
+  "magazine_allowances",
+  "uniform_allowance",
+  "other_allowance",
+  "section_break_bctha",
+  "revised_basic",
+  "revised_cca",
+  "revised_house_rent_allowance",
+  "revised_special_allowance",
+  "revised_conveyance_allowance",
+  "column_break_yprrv",
+  "revised_medical_allowances",
+  "revised_shift_allowance",
+  "revised_magazine_allowances",
+  "revised_uniform_allowance",
+  "revised_other_allowance",
+  "revised_b_section",
+  "revise_basic_",
+  "revise_cca",
+  "revise_house_rent_allowance",
+  "revise_special_allowance",
+  "revise_conveyance_allowance",
+  "column_break_i2pzy",
+  "revise_medical_allowances",
+  "revise_shift_allowance",
+  "revise_magazine_allowances",
+  "revise_uniform_allowance",
+  "revise_other_allowance"
+ ],
+ "fields": [
+  {
+   "fieldname": "basic",
+   "fieldtype": "Currency",
+   "label": "Basic"
+  },
+  {
+   "fieldname": "house_rent_allowance",
+   "fieldtype": "Currency",
+   "label": "House Rent Allowance"
+  },
+  {
+   "fieldname": "special_allowance",
+   "fieldtype": "Currency",
+   "label": "Special Allowance"
+  },
+  {
+   "fieldname": "conveyance_allowance",
+   "fieldtype": "Currency",
+   "label": "Conveyance Allowance"
+  },
+  {
+   "fieldname": "medical_allowances",
+   "fieldtype": "Currency",
+   "label": "Medical Allowances"
+  },
+  {
+   "fieldname": "shift_allowance",
+   "fieldtype": "Currency",
+   "label": "Shift Allowance"
+  },
+  {
+   "fieldname": "uniform_allowance",
+   "fieldtype": "Currency",
+   "label": "Uniform Allowance"
+  },
+  {
+   "fieldname": "magazine_allowances",
+   "fieldtype": "Currency",
+   "label": "Magazine Allowances"
+  },
+  {
+   "fieldname": "other_allowance",
+   "fieldtype": "Currency",
+   "label": "Other Allowance"
+  },
+  {
+   "fieldname": "gross_salary",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Gross Salary",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "revised_gross_salary",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Revised Gross Salary",
+   "read_only": 1
+  },
+  {
+   "fieldname": "salary_increment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Salary Increment Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "increment_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Increment Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reference_document",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Reference Document",
+   "options": "Salary Increment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_0wadz",
+   "fieldtype": "Section Break",
+   "label": "Current Salary Details"
+  },
+  {
+   "fieldname": "column_break_tvbp5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cca",
+   "fieldtype": "Currency",
+   "label": "CCA"
+  },
+  {
+   "fieldname": "section_break_bctha",
+   "fieldtype": "Section Break",
+   "label": "Increment Salary Details"
+  },
+  {
+   "fieldname": "revised_basic",
+   "fieldtype": "Currency",
+   "label": "Revised Basic"
+  },
+  {
+   "fieldname": "revised_cca",
+   "fieldtype": "Currency",
+   "label": "Revised CCA"
+  },
+  {
+   "fieldname": "revised_house_rent_allowance",
+   "fieldtype": "Currency",
+   "label": "Revised House Rent Allowance"
+  },
+  {
+   "fieldname": "revised_special_allowance",
+   "fieldtype": "Currency",
+   "label": "Revised Special Allowance"
+  },
+  {
+   "fieldname": "revised_conveyance_allowance",
+   "fieldtype": "Currency",
+   "label": "Revised Conveyance Allowance"
+  },
+  {
+   "fieldname": "column_break_yprrv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "revised_medical_allowances",
+   "fieldtype": "Currency",
+   "label": "Revised Medical Allowances"
+  },
+  {
+   "fieldname": "revised_shift_allowance",
+   "fieldtype": "Currency",
+   "label": "Revised Shift Allowance"
+  },
+  {
+   "fieldname": "revised_magazine_allowances",
+   "fieldtype": "Currency",
+   "label": "Revised Magazine Allowances"
+  },
+  {
+   "fieldname": "revised_uniform_allowance",
+   "fieldtype": "Currency",
+   "label": "Revised Uniform Allowance"
+  },
+  {
+   "fieldname": "revised_other_allowance",
+   "fieldtype": "Currency",
+   "label": "Revised Other Allowance"
+  },
+  {
+   "fieldname": "column_break_rro7x",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "increment_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Increment Type",
+   "options": "\nAmount\nPercentage",
+   "read_only": 1
+  },
+  {
+   "fieldname": "revised_b_section",
+   "fieldtype": "Section Break",
+   "label": "Revised Salary Details"
+  },
+  {
+   "fieldname": "revise_basic_",
+   "fieldtype": "Currency",
+   "label": "Revised Basic "
+  },
+  {
+   "fieldname": "revise_cca",
+   "fieldtype": "Currency",
+   "label": "Revised CCA"
+  },
+  {
+   "fieldname": "revise_house_rent_allowance",
+   "fieldtype": "Currency",
+   "label": "Revised House Rent Allowance"
+  },
+  {
+   "fieldname": "revise_special_allowance",
+   "fieldtype": "Currency",
+   "label": "Revised Special Allowance"
+  },
+  {
+   "fieldname": "revise_conveyance_allowance",
+   "fieldtype": "Currency",
+   "label": "Revised Conveyance Allowance"
+  },
+  {
+   "fieldname": "column_break_i2pzy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "revise_medical_allowances",
+   "fieldtype": "Currency",
+   "label": "Revised Medical Allowances"
+  },
+  {
+   "fieldname": "revise_shift_allowance",
+   "fieldtype": "Currency",
+   "label": "Revised Shift Allowance"
+  },
+  {
+   "fieldname": "revise_magazine_allowances",
+   "fieldtype": "Currency",
+   "label": "Revised Magazine Allowances"
+  },
+  {
+   "fieldname": "revise_uniform_allowance",
+   "fieldtype": "Currency",
+   "label": "Revised Uniform Allowance"
+  },
+  {
+   "fieldname": "revise_other_allowance",
+   "fieldtype": "Currency",
+   "label": "Revised Other Allowance"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-06-25 12:49:11.317602",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Salary Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

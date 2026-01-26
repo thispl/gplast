@@ -1,0 +1,45 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-05-24 12:51:41.709695",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "from_salary",
+  "to_salary",
+  "pt_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "from_salary",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "From Salary"
+  },
+  {
+   "fieldname": "to_salary",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "To Salary"
+  },
+  {
+   "fieldname": "pt_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "PT Amount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-05-24 12:51:41.709695",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "PT Transaction Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

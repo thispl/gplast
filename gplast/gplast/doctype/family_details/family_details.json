@@ -1,0 +1,77 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-09-28 16:06:20.535457",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "relationship",
+  "name1",
+  "age",
+  "sex",
+  "quali\ufb01cation",
+  "occupation",
+  "income"
+ ],
+ "fields": [
+  {
+   "fieldname": "relationship",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Relationship",
+   "options": "\nFather\nMother\nHusband\nWife\nBrother\nSister\nSon\nDaughter"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Age",
+   "mandatory_depends_on": "eval:doc.relationship"
+  },
+  {
+   "fieldname": "quali\ufb01cation",
+   "fieldtype": "Data",
+   "label": "Quali\ufb01cation"
+  },
+  {
+   "fieldname": "occupation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Occupation"
+  },
+  {
+   "fieldname": "income",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Income"
+  },
+  {
+   "fieldname": "sex",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Sex",
+   "mandatory_depends_on": "eval:doc.relationship",
+   "options": "\nF\nM"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-10-12 17:52:03.421787",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Family Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

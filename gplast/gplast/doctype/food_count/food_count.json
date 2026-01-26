@@ -1,0 +1,96 @@
+{
+ "actions": [],
+ "allow_events_in_timeline": 1,
+ "autoname": "format:CC-{employee}-{meal_type}-{date}",
+ "creation": "2023-10-03 12:12:01.472587",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "date",
+  "column_break_r8edf",
+  "branch",
+  "meal_type",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Employee Name"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_r8edf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "meal_type",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Meal Type",
+   "options": "Menu Type"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Food Count",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-16 13:40:08.915504",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Food Count",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

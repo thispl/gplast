@@ -1,0 +1,134 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "Rev-.######",
+ "creation": "2025-06-03 11:54:14.247629",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "department",
+  "designation",
+  "leave_application",
+  "column_break_ebup",
+  "from_date",
+  "to_date",
+  "total_leave_in_days",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.first_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "leave_application",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Leave Application",
+   "options": "Leave Application"
+  },
+  {
+   "fieldname": "column_break_ebup",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "From Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "To Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_leave_in_days",
+   "fieldtype": "Int",
+   "label": "Total Days",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Leave Revocation",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Leave Revocation",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fetch_if_empty": 1,
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-06-03 18:47:01.045825",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Leave Revocation",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "from_date,to_date",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

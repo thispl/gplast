@@ -1,0 +1,155 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:employee",
+ "creation": "2025-06-17 18:45:52.917074",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "designation",
+  "employee_grade",
+  "employee_category",
+  "column_break_p8h94",
+  "company",
+  "department",
+  "designation_code",
+  "unit",
+  "section_break_pewc5",
+  "salary_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee",
+   "unique": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.employee_grade",
+   "fieldname": "employee_grade",
+   "fieldtype": "Link",
+   "label": "Employee Grade",
+   "options": "Employee Grade",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.employee_category",
+   "fieldname": "employee_category",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Employee Category",
+   "options": "Employee Category",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_p8h94",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation_code",
+   "fieldname": "designation_code",
+   "fieldtype": "Link",
+   "label": "Designation Code",
+   "options": "Sub Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.unit",
+   "fieldname": "unit",
+   "fieldtype": "Link",
+   "label": "Unit",
+   "options": "UNIT",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_pewc5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "salary_details",
+   "fieldtype": "Table",
+   "label": "Salary Details",
+   "options": "Salary Details",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-06-20 12:32:48.948237",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Revision Summary",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

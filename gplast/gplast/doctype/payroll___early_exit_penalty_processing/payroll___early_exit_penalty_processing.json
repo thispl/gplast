@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-07 19:45:59.908191",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "start_date",
+  "column_break_vqeka",
+  "end_date",
+  "column_break_b7yly",
+  "process_early_exit",
+  "column_break_jtdxg",
+  "create_early_exit_penalty"
+ ],
+ "fields": [
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "column_break_vqeka",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_b7yly",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "process_early_exit",
+   "fieldtype": "Button",
+   "label": "Process Early Exit"
+  },
+  {
+   "fieldname": "column_break_jtdxg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "create_early_exit_penalty",
+   "fieldtype": "Button",
+   "label": "Create Early Exit Penalty"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-03-09 11:23:15.479166",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Payroll - Early Exit Penalty Processing",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

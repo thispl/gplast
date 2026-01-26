@@ -1,0 +1,104 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-22 19:28:34.761565",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "leave_application",
+  "employee",
+  "employee_name",
+  "leave_type",
+  "column_break_tgg1w",
+  "from_date",
+  "to_date",
+  "half_day",
+  "half_day_date",
+  "total_leave_days"
+ ],
+ "fields": [
+  {
+   "fieldname": "leave_application",
+   "fieldtype": "Link",
+   "label": "Leave Application",
+   "options": "Leave Application"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "column_break_tgg1w",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "From Date"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "To Date"
+  },
+  {
+   "default": "0",
+   "fieldname": "half_day",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Half Day"
+  },
+  {
+   "fieldname": "half_day_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Half Day Date"
+  },
+  {
+   "fieldname": "total_leave_days",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Total Leave Days"
+  },
+  {
+   "fieldname": "leave_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Leave Type",
+   "options": "Leave Type"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-01-22 19:53:06.206306",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "LA Approval",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

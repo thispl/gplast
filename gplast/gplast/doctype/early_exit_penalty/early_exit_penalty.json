@@ -1,0 +1,102 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "EE.#####",
+ "creation": "2025-03-07 20:09:04.812486",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "emp_name",
+  "employee_name",
+  "actual_early_exit",
+  "early_exit_days",
+  "column_break_zquec",
+  "deduction_amount",
+  "deduction_days",
+  "from_date",
+  "to_date",
+  "early_exit_penalty"
+ ],
+ "fields": [
+  {
+   "fieldname": "emp_name",
+   "fieldtype": "Link",
+   "label": "Employee ID",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "emp_name.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Read Only",
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "actual_early_exit",
+   "fieldtype": "Int",
+   "label": "Actual Early Exit"
+  },
+  {
+   "fieldname": "early_exit_days",
+   "fieldtype": "Int",
+   "label": "Early Exit Days"
+  },
+  {
+   "fieldname": "column_break_zquec",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "deduction_amount",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Deduction Amount"
+  },
+  {
+   "fieldname": "deduction_days",
+   "fieldtype": "Float",
+   "label": "Deduction Days"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date"
+  },
+  {
+   "fieldname": "early_exit_penalty",
+   "fieldtype": "Currency",
+   "label": "Early Exit Penalty"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-03-09 11:49:12.349468",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Early Exit Penalty",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

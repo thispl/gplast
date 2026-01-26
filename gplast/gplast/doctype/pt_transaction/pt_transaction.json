@@ -1,0 +1,53 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:pt_transaction",
+ "creation": "2025-05-24 12:53:26.398004",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "pt_transaction",
+  "pt_transaction_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "pt_transaction",
+   "fieldtype": "Data",
+   "label": "PT Transaction",
+   "unique": 1
+  },
+  {
+   "fieldname": "pt_transaction_details",
+   "fieldtype": "Table",
+   "label": "PT Transaction Details",
+   "options": "PT Transaction Details"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-05-24 12:54:09.172850",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "PT Transaction",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,79 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-10-03 15:53:04.773527",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "place_of_visitstay",
+  "start_date",
+  "end_date",
+  "company",
+  "column_break_lmiv7",
+  "whom_to_meet",
+  "purpose_of_visit",
+  "estimated_expense"
+ ],
+ "fields": [
+  {
+   "fieldname": "place_of_visitstay",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Place of Visit/Stay"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "End Date"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company ",
+   "options": "GPLAST"
+  },
+  {
+   "fieldname": "column_break_lmiv7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "whom_to_meet",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Whom to Meet"
+  },
+  {
+   "fieldname": "purpose_of_visit",
+   "fieldtype": "Text Editor",
+   "in_list_view": 1,
+   "label": "Purpose of Visit"
+  },
+  {
+   "fieldname": "estimated_expense",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Estimated Expense"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-10-03 15:53:04.773527",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Pre Tour",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

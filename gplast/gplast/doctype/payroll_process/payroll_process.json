@@ -1,0 +1,123 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-10-13 18:49:49.724863",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "start_date",
+  "column_break_2",
+  "end_date",
+  "late_section",
+  "process_late",
+  "column_break_6",
+  "create_late_penalty",
+  "permission_section",
+  "process_permission",
+  "column_break_n14ji",
+  "section_break_fkebt",
+  "leave_deduction",
+  "create_leave_ledger_entry",
+  "column_break_kmulg",
+  "leave_days"
+ ],
+ "fields": [
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "late_section",
+   "fieldtype": "Section Break",
+   "label": "Late"
+  },
+  {
+   "fieldname": "process_late",
+   "fieldtype": "Button",
+   "label": "Process Late"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "create_late_penalty",
+   "fieldtype": "Button",
+   "label": "Create Late Penalty"
+  },
+  {
+   "fieldname": "permission_section",
+   "fieldtype": "Section Break",
+   "label": "Permission"
+  },
+  {
+   "fieldname": "process_permission",
+   "fieldtype": "Button",
+   "label": "Process Permission"
+  },
+  {
+   "fieldname": "create_leave_ledger_entry",
+   "fieldtype": "Button",
+   "label": "Create Leave Ledger Entry"
+  },
+  {
+   "fieldname": "column_break_n14ji",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "leave_deduction",
+   "fieldtype": "Select",
+   "label": "Leave deduction",
+   "options": "Casual Leave\nPrivilege Leave"
+  },
+  {
+   "fieldname": "column_break_kmulg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "leave_days",
+   "fieldtype": "Data",
+   "label": "Leave Days"
+  },
+  {
+   "fieldname": "section_break_fkebt",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-11-20 10:33:41.474024",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Payroll Process",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

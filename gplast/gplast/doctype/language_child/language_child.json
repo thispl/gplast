@@ -1,0 +1,65 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-09-28 15:28:41.739301",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "language_name",
+  "mother_tongue",
+  "read",
+  "write",
+  "speak"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "read",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Read"
+  },
+  {
+   "default": "0",
+   "fieldname": "write",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Write"
+  },
+  {
+   "default": "0",
+   "fieldname": "speak",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Speak"
+  },
+  {
+   "default": "0",
+   "fieldname": "mother_tongue",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Mother Tongue"
+  },
+  {
+   "fieldname": "language_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Language Name",
+   "options": "Languages_"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-05-30 18:07:44.310359",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Language Child",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

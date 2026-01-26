@@ -1,0 +1,38 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2025-03-28 13:23:26.770572",
+ "disable_prepared_report": 0,
+ "disabled": 1,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2025-03-28 15:59:02.572238",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Leave Application Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Leave Application",
+ "report_name": "Leave Application Report",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "HR User"
+  },
+  {
+   "role": "Employee"
+  },
+  {
+   "role": "HR Manager"
+  },
+  {
+   "role": "Leave Approver"
+  },
+  {
+   "role": "Employee Self Service"
+  }
+ ]
+}

@@ -1,0 +1,75 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-13 18:39:58.200357",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "cost_center_1",
+  "cost_center",
+  "column_break_ws0m5",
+  "department",
+  "section_break_jddkl",
+  "staffing_plan"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_ws0m5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "section_break_jddkl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "staffing_plan",
+   "fieldtype": "HTML",
+   "label": "Staffing Plan Report"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center  ",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "cost_center_1",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Cost Center1",
+   "options": "\nIMD\nTRD\nDCD"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-11-24 15:55:11.234241",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Report Staffing Plan",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

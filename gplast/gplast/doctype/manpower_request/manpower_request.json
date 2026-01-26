@@ -1,0 +1,581 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "MR.####",
+ "creation": "2023-09-28 12:31:55.879770",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "apply_for_left_employee",
+  "job_requisition_id",
+  "column_break_wtrrf",
+  "prepared_section",
+  "prepared_by",
+  "cost_center",
+  "location",
+  "column_break_3trbq",
+  "prepared_by_employee_name",
+  "skill_matrix",
+  "section",
+  "details",
+  "date",
+  "filled_by",
+  "employee_id",
+  "employee_name",
+  "reporting_to",
+  "hod",
+  "vacancy_due_to",
+  "employee_id_due",
+  "employee_name_due",
+  "vacancy_count",
+  "column_break_cjwmo",
+  "sex",
+  "effective_from",
+  "type",
+  "in_case_of_operators_please_specify_machine_name",
+  "section_break_rsqq0",
+  "department",
+  "designation",
+  "designation_code",
+  "sub_designation_name",
+  "column_break_w9u8d",
+  "new_department",
+  "new_designation",
+  "new_designation_code",
+  "new_sub_designation_name",
+  "no_of_vacancy",
+  "section_break_bdype",
+  "column_break_86i8c",
+  "division",
+  "column_break_alnks",
+  "time",
+  "quarterly",
+  "half_yearly",
+  "monthly",
+  "section_break_v4nvm",
+  "table",
+  "from_date",
+  "to_date",
+  "column_break_dq706",
+  "column_break_z96cm",
+  "idenified_by_hod",
+  "column_break_ctac4",
+  "recommended_by_coo",
+  "proposed_designation_section",
+  "proposed_designation",
+  "description",
+  "job_description",
+  "salary_section",
+  "salary",
+  "column_break_z9awb",
+  "grade",
+  "qualification",
+  "experience",
+  "skills_and_competency",
+  "section_break_fmcrk",
+  "skills_competency",
+  "amended_from",
+  "forward_details",
+  "employee_permission",
+  "approved_date",
+  "user_id"
+ ],
+ "fields": [
+  {
+   "fetch_from": "job_requisition_id.requested_by",
+   "fetch_if_empty": 1,
+   "fieldname": "prepared_by",
+   "fieldtype": "Link",
+   "label": "Prepared by Employee Code",
+   "options": "Employee",
+   "read_only_depends_on": "eval: frappe.session.user !== 'Administrator'"
+  },
+  {
+   "fieldname": "section",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Section",
+   "options": "Section"
+  },
+  {
+   "fetch_from": "prepared_by.gender",
+   "fieldname": "sex",
+   "fieldtype": "Link",
+   "label": "Gender",
+   "options": "Gender"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Link",
+   "label": "Type",
+   "options": "Manpower Request Type"
+  },
+  {
+   "fieldname": "in_case_of_operators_please_specify_machine_name",
+   "fieldtype": "Data",
+   "label": "In Case Of Operators Please Specify Machine Name"
+  },
+  {
+   "fieldname": "vacancy_due_to",
+   "fieldtype": "Select",
+   "label": "Vacancy Due to",
+   "options": "\nResignation\nExpansion\nWorkload\nQuantity Policy\nTermination\nLeft"
+  },
+  {
+   "fieldname": "proposed_designation",
+   "fieldtype": "Link",
+   "label": "Proposed Designation ",
+   "options": "Designation"
+  },
+  {
+   "fieldname": "job_description",
+   "fieldtype": "Small Text",
+   "label": "Job Description "
+  },
+  {
+   "fieldname": "column_break_z96cm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_dq706",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "grade",
+   "fieldtype": "Link",
+   "label": "Grade",
+   "options": "Employee Grade"
+  },
+  {
+   "fieldname": "idenified_by_hod",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Identified By Hod"
+  },
+  {
+   "fieldname": "salary",
+   "fieldtype": "Int",
+   "label": "Salary"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "recommended_by_coo",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Recommended By COO"
+  },
+  {
+   "fieldname": "prepared_section",
+   "fieldtype": "Section Break",
+   "label": "Prepared By"
+  },
+  {
+   "fieldname": "details",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "salary_section",
+   "fieldtype": "Section Break",
+   "label": "Salary"
+  },
+  {
+   "fieldname": "column_break_z9awb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "proposed_designation_section",
+   "fieldtype": "Section Break",
+   "label": "Proposed Designation"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "column_break_ctac4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_86i8c",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_3trbq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "prepared_by.employee_name",
+   "fieldname": "prepared_by_employee_name",
+   "fieldtype": "Data",
+   "label": "Prepared By Employee Name"
+  },
+  {
+   "fieldname": "division",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Division",
+   "options": "Division"
+  },
+  {
+   "fetch_from": "employee_id.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "mandatory_depends_on": "eval: doc.filled_by == \"Internal Transfer\" || doc.filled_by == \"Promotion\" || doc.filled_by == \"New Candidate\"",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval: doc.filled_by == \"Internal Transfer\" || doc.filled_by == \"Promotion\"",
+   "fieldname": "employee_id",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Employee ID",
+   "mandatory_depends_on": "eval: doc.filled_by == \"Internal Transfer\" || doc.filled_by == \"Promotion\"",
+   "options": "Employee"
+  },
+  {
+   "depends_on": "eval: doc.filled_by == \"Internal Transfer\" || doc.filled_by == \"Promotion\"",
+   "fetch_from": "employee_id.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "mandatory_depends_on": "eval: doc.filled_by == \"Internal Transfer\" || doc.filled_by == \"Promotion\""
+  },
+  {
+   "fieldname": "qualification",
+   "fieldtype": "Data",
+   "label": "Qualification"
+  },
+  {
+   "fieldname": "experience",
+   "fieldtype": "Data",
+   "label": "Experience"
+  },
+  {
+   "fieldname": "skills_and_competency",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Skills & Competency"
+  },
+  {
+   "depends_on": "eval: doc.type == \"Outsourcing (for Specific Period)\"",
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date"
+  },
+  {
+   "depends_on": "eval: doc.type == \"Outsourcing (for Specific Period)\"",
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date"
+  },
+  {
+   "depends_on": "eval: doc.filled_by == \"Internal Transfer\" || doc.filled_by == \"Promotion\"",
+   "fetch_from": "prepared_by.designation_code",
+   "fieldname": "designation_code",
+   "fieldtype": "Link",
+   "label": "Current Designation Code",
+   "mandatory_depends_on": "eval: doc.filled_by == \"Internal Transfer\" || doc.filled_by == \"Promotion\"",
+   "options": "Sub Designation"
+  },
+  {
+   "depends_on": "eval: doc.filled_by == \"Internal Transfer\" || doc.filled_by == \"Promotion\"",
+   "fetch_from": "designation_code.sub_designation_name",
+   "fieldname": "sub_designation_name",
+   "fieldtype": "Data",
+   "label": "Sub Designation Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee_id.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "time",
+   "fieldtype": "Select",
+   "label": "Period",
+   "options": "\nQuarterly\nMonthly"
+  },
+  {
+   "depends_on": "eval: doc.time == \"Quarterly\"",
+   "fieldname": "quarterly",
+   "fieldtype": "Select",
+   "label": "Quarterly",
+   "mandatory_depends_on": "eval: doc.time == \"Quarterly\"",
+   "options": "\n1\n2\n3\n4"
+  },
+  {
+   "depends_on": "eval: doc.time==\"Half-yearly\"",
+   "fieldname": "half_yearly",
+   "fieldtype": "Select",
+   "label": "Half-yearly",
+   "options": "\n1\n2"
+  },
+  {
+   "depends_on": "eval: doc.time == \"Monthly\"",
+   "fieldname": "monthly",
+   "fieldtype": "Select",
+   "label": "Monthly",
+   "mandatory_depends_on": "eval: doc.time == \"Monthly\"",
+   "options": "\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Manpower Request",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval: doc.time == \"Quarterly\" || doc.time == \"Half-yearly\" || doc.time == \"Monthly\"",
+   "fieldname": "vacancy_count",
+   "fieldtype": "Int",
+   "label": "Current Recruitment Count",
+   "mandatory_depends_on": "eval: doc.time == \"Quarterly\" || doc.time == \"Half-yearly\" || doc.time == \"Monthly\""
+  },
+  {
+   "fieldname": "filled_by",
+   "fieldtype": "Select",
+   "label": "Filled By",
+   "options": "\nInternal Transfer\nPromotion\nNew Candidate",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval: doc.filled_by == \"Internal Transfer\" || doc.filled_by == \"Promotion\"",
+   "fetch_from": "employee_id.reports_to",
+   "fieldname": "reporting_to",
+   "fieldtype": "Read Only",
+   "label": "Reporting To"
+  },
+  {
+   "depends_on": "eval: doc.filled_by == \"Internal Transfer\" || doc.filled_by == \"Promotion\"",
+   "fieldname": "hod",
+   "fieldtype": "Data",
+   "label": "HOD",
+   "mandatory_depends_on": "eval: doc.filled_by == \"Internal Transfer\" || doc.filled_by == \"Promotion\""
+  },
+  {
+   "depends_on": "eval: doc.filled_by == \"Internal Transfer\" || doc.filled_by == \"Promotion\"",
+   "fieldname": "effective_from",
+   "fieldtype": "Date",
+   "label": "Effective From",
+   "mandatory_depends_on": "eval: doc.filled_by == \"Internal Transfer\" || doc.filled_by == \"Promotion\""
+  },
+  {
+   "depends_on": "eval: doc.vacancy_due_to== \"Resignation\"",
+   "fieldname": "employee_id_due",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Resignation Employee ID",
+   "mandatory_depends_on": "eval: doc.vacancy_due_to== \"Resignation\"",
+   "options": "Employee"
+  },
+  {
+   "depends_on": "eval: doc.vacancy_due_to == \"Resignation\"",
+   "fetch_from": "employee_id_due.employee_name",
+   "fieldname": "employee_name_due",
+   "fieldtype": "Data",
+   "label": "Resignation Employee Name"
+  },
+  {
+   "fetch_from": "job_requisition_id.no_of_positions",
+   "fieldname": "no_of_vacancy",
+   "fieldtype": "Int",
+   "label": "No. of Vacancy",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_rsqq0",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "new_designation_code",
+   "fieldtype": "Link",
+   "label": "New Designation Code",
+   "mandatory_depends_on": "eval: doc.filled_by == \"Internal Transfer\" || doc.filled_by == \"Promotion\" || doc.filled_by == \"New Candidate\"",
+   "options": "Sub Designation",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "new_designation_code.sub_designation_name",
+   "fieldname": "new_sub_designation_name",
+   "fieldtype": "Read Only",
+   "hidden": 1,
+   "label": "Sub Designation Name"
+  },
+  {
+   "fetch_from": "new_designation_code.parent_designation",
+   "fieldname": "new_designation",
+   "fieldtype": "Read Only",
+   "label": "Designation",
+   "options": "Designation"
+  },
+  {
+   "depends_on": "eval: doc.job_requisition_id || doc.apply_for_left_employee",
+   "fetch_from": "new_designation_code.department",
+   "fieldname": "new_department",
+   "fieldtype": "Read Only",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "employee_permission",
+   "fieldtype": "Table",
+   "label": "Employee Permission",
+   "options": "Workflow Employee Permission"
+  },
+  {
+   "fieldname": "section_break_bdype",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_alnks",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.workflow_state == \"Forwarded\"",
+   "fieldname": "forward_details",
+   "fieldtype": "Tab Break",
+   "label": "Forward Details"
+  },
+  {
+   "fieldname": "approved_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Approved Date"
+  },
+  {
+   "fieldname": "section_break_v4nvm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_w9u8d",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.vacancy_count > 1 && (doc.filled_by == \"Internal Transfer\" || doc.filled_by == \"Promotion\")",
+   "fieldname": "table",
+   "fieldtype": "Table",
+   "label": "Table",
+   "mandatory_depends_on": "eval:doc.vacancy_count > 1 && (doc.filled_by == \"Internal Transfer\" || doc.filled_by == \"Promotion\")",
+   "options": "Manpower Request Child"
+  },
+  {
+   "fieldname": "job_requisition_id",
+   "fieldtype": "Link",
+   "label": "Job Requisition",
+   "mandatory_depends_on": "eval:doc.apply_for_left_employee ==0",
+   "options": "Job Requisition"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.__islocal",
+   "fieldname": "apply_for_left_employee",
+   "fieldtype": "Check",
+   "label": "Apply For Resigned / Left Employee",
+   "mandatory_depends_on": "// eval:doc.__islocal"
+  },
+  {
+   "fieldname": "column_break_wtrrf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_cjwmo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "job_requisition_id.cost__center",
+   "fieldname": "cost_center",
+   "fieldtype": "Data",
+   "label": "Cost Center",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "job_requisition_id.location",
+   "fieldname": "location",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Location",
+   "options": "\nUnit - I\nUnit - II\nUnit - III"
+  },
+  {
+   "fieldname": "skills_competency",
+   "fieldtype": "Small Text",
+   "label": "Skills & Competency"
+  },
+  {
+   "fieldname": "section_break_fmcrk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "skill_matrix",
+   "fieldtype": "Attach",
+   "hidden": 1,
+   "label": "Skill Matrix"
+  },
+  {
+   "fetch_from": "prepared_by.user_id",
+   "fieldname": "user_id",
+   "fieldtype": "Link",
+   "label": "User ID",
+   "options": "User"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-12-13 11:14:25.362779",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Manpower Request",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

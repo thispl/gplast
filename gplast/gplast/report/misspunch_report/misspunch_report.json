@@ -1,0 +1,26 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2025-03-27 10:41:16.847788",
+ "disable_prepared_report": 0,
+ "disabled": 1,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2025-03-29 11:33:53.772787",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Misspunch Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Miss Punch Application",
+ "report_name": "Misspunch Report",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

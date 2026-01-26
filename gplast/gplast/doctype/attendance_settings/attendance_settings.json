@@ -1,0 +1,122 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-14 10:43:06.273108",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "from_date",
+  "to_date",
+  "employee",
+  "employee_category",
+  "column_break_kydru",
+  "process_sa",
+  "process_checkin",
+  "process_ur",
+  "process_att",
+  "process_sp_all",
+  "submit_week_off_attendance"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Date"
+  },
+  {
+   "depends_on": "eval:doc.from_date && doc.to_date",
+   "fieldname": "process_checkin",
+   "fieldtype": "Button",
+   "label": "Process Checkin"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date"
+  },
+  {
+   "depends_on": "eval:doc.from_date && doc.to_date",
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "depends_on": "eval:doc.from_date && doc.to_date",
+   "fieldname": "employee_category",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Employee Category",
+   "options": "Employee Category"
+  },
+  {
+   "fieldname": "column_break_kydru",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.from_date && doc.to_date && (doc.employee_category =='Worker' || !doc.employee_category)",
+   "fieldname": "process_sa",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "Process Shift Allowance"
+  },
+  {
+   "depends_on": "eval:doc.from_date && doc.to_date",
+   "fieldname": "process_att",
+   "fieldtype": "Button",
+   "label": "Process Attendance"
+  },
+  {
+   "depends_on": "eval:doc.from_date && doc.to_date && (doc.employee_category =='Staff' || !doc.employee_category)",
+   "fieldname": "process_sp_all",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "Process Special Allowance"
+  },
+  {
+   "depends_on": "eval:doc.from_date && doc.to_date",
+   "fieldname": "process_ur",
+   "fieldtype": "Button",
+   "label": "Process Unregistered Checkin"
+  },
+  {
+   "depends_on": "eval:doc.from_date && doc.to_date",
+   "fieldname": "submit_week_off_attendance",
+   "fieldtype": "Button",
+   "label": "Submit Week Off Attendance"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-01-20 16:46:37.446068",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Attendance Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

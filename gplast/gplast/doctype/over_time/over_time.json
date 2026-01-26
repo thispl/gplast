@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "OT-.####",
  "creation": "2023-06-05 18:48:14.180752",
  "default_view": "List",
  "doctype": "DocType",
@@ -9,12 +10,28 @@
  "field_order": [
   "employee",
   "employee_name",
+  "department",
+  "designation",
+  "unit",
+  "total_hours",
   "working_hours",
-  "ot_hours",
   "column_break_qbdaz",
+  "ot_date",
+  "shift",
   "in_time",
   "outtime",
-  "amended_from"
+  "ot_hour",
+  "overtime_hours",
+  "user_id",
+  "section_break_djy03",
+  "approver",
+  "hod",
+  "column_break_wskfj",
+  "approver_name",
+  "supervisor",
+  "amended_from",
+  "reason",
+  "previous_approval_date"
  ],
  "fields": [
   {
@@ -28,16 +45,6 @@
    "fieldname": "employee_name",
    "fieldtype": "Data",
    "label": "Employee Name"
-  },
-  {
-   "fieldname": "working_hours",
-   "fieldtype": "Int",
-   "label": "Working Hours"
-  },
-  {
-   "fieldname": "ot_hours",
-   "fieldtype": "Int",
-   "label": "OT Hours"
   },
   {
    "fieldname": "amended_from",
@@ -54,22 +61,138 @@
   },
   {
    "fieldname": "in_time",
-   "fieldtype": "Datetime",
+   "fieldtype": "Time",
+   "hidden": 1,
    "label": "In Time"
   },
   {
    "fieldname": "outtime",
-   "fieldtype": "Datetime",
+   "fieldtype": "Time",
+   "hidden": 1,
    "label": "OutTime"
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ot_date",
+   "fieldtype": "Date",
+   "label": "OT Date"
+  },
+  {
+   "fieldname": "shift",
+   "fieldtype": "Link",
+   "label": "Shift",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "section_break_djy03",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "approver",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Approver",
+   "options": "User"
+  },
+  {
+   "fetch_from": "approver.full_name",
+   "fieldname": "approver_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Approver Name"
+  },
+  {
+   "fieldname": "working_hours",
+   "fieldtype": "Time",
+   "hidden": 1,
+   "label": "Working Hours",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_hours",
+   "fieldtype": "Time",
+   "hidden": 1,
+   "label": "Total Hours"
+  },
+  {
+   "fieldname": "ot_hour",
+   "fieldtype": "Time",
+   "hidden": 1,
+   "label": "OT Hour"
+  },
+  {
+   "fieldname": "overtime_hours",
+   "fieldtype": "Float",
+   "label": "Overtime Hours"
+  },
+  {
+   "fieldname": "column_break_wskfj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "department.hod",
+   "fieldname": "hod",
+   "fieldtype": "Link",
+   "label": "HOD",
+   "options": "User"
+  },
+  {
+   "fetch_from": "department.supervisor_",
+   "fieldname": "supervisor",
+   "fieldtype": "Link",
+   "label": "Supervisor",
+   "options": "User"
+  },
+  {
+   "fetch_from": "employee.user_id",
+   "fieldname": "user_id",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "User Id",
+   "options": "User"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason"
+  },
+  {
+   "fieldname": "previous_approval_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Previous Approval Date"
+  },
+  {
+   "fetch_from": "employee.unit",
+   "fieldname": "unit",
+   "fieldtype": "Link",
+   "label": "Unit",
+   "options": "UNIT"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-05 19:16:35.200583",
+ "modified": "2025-11-21 10:57:34.011216",
  "modified_by": "Administrator",
  "module": "GPLAST",
  "name": "Over Time",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
@@ -87,5 +210,6 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1
 }

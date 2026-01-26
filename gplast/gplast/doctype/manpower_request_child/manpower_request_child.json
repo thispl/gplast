@@ -1,0 +1,121 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-11 15:35:40.985982",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee_id",
+  "employee_name",
+  "current_designation_details_column",
+  "current_designation_code",
+  "current_sub_designation_name",
+  "current_designation",
+  "current_department",
+  "new_designation_details_column",
+  "new_designation_code",
+  "new_sub_designation_name",
+  "new_designation",
+  "new_department"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee ID",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee_id.designation_code",
+   "fieldname": "current_designation_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Current Designation Code",
+   "options": "Sub Designation"
+  },
+  {
+   "fetch_from": "current_designation_code.parent_designation",
+   "fieldname": "current_designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "current_designation_code.sub_designation_name",
+   "fieldname": "current_sub_designation_name",
+   "fieldtype": "Data",
+   "label": "Sub Designation Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "current_designation_code.department",
+   "fieldname": "current_department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_designation_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "New Designation Code",
+   "options": "Sub Designation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_designation_details_column",
+   "fieldtype": "Column Break",
+   "label": "New Designation Details"
+  },
+  {
+   "fetch_from": "new_designation_code.sub_designation_name",
+   "fieldname": "new_sub_designation_name",
+   "fieldtype": "Data",
+   "label": "Sub Designation Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "new_designation_code.parent_designation",
+   "fieldname": "new_designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "current_designation_details_column",
+   "fieldtype": "Column Break",
+   "label": "Current Designation Details"
+  },
+  {
+   "fetch_from": "new_designation_code.department",
+   "fieldname": "new_department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee_id.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-17 12:40:43.453135",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Manpower Request Child",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

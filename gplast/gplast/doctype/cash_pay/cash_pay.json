@@ -1,0 +1,50 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-10-04 15:35:00.412073",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "head_of_account",
+  "bill_number",
+  "date",
+  "amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "head_of_account",
+   "fieldtype": "Link",
+   "label": "Head of Account",
+   "options": "Head of Account"
+  },
+  {
+   "fieldname": "bill_number",
+   "fieldtype": "Data",
+   "label": "Bill Number"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-10-04 15:35:00.412073",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Cash Pay",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

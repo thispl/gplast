@@ -1,0 +1,175 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "ARR - .#####",
+ "creation": "2025-09-20 14:10:45.375037",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee_details_section",
+  "employee",
+  "employee_name",
+  "salary_increment",
+  "column_break_tvpjm",
+  "department",
+  "designation",
+  "column_break_32zsr",
+  "increment_month",
+  "incremented_by",
+  "increment_amount",
+  "salary_details_section",
+  "current_salary_column",
+  "basic_c",
+  "hra_c",
+  "increment_amount_column",
+  "basic_i",
+  "hra_i",
+  "revised_salary_column",
+  "basic_r",
+  "hra_r",
+  "arrear_details_section"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "column_break_tvpjm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department"
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation"
+  },
+  {
+   "fieldname": "column_break_32zsr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.next_increment",
+   "fieldname": "increment_month",
+   "fieldtype": "Data",
+   "label": "Increment Month"
+  },
+  {
+   "fieldname": "incremented_by",
+   "fieldtype": "Date",
+   "label": "Incremented By"
+  },
+  {
+   "fieldname": "salary_details_section",
+   "fieldtype": "Section Break",
+   "label": "Salary Details"
+  },
+  {
+   "fieldname": "current_salary_column",
+   "fieldtype": "Column Break",
+   "label": "Current Salary"
+  },
+  {
+   "fieldname": "employee_details_section",
+   "fieldtype": "Section Break",
+   "label": "Employee Details"
+  },
+  {
+   "fieldname": "basic_c",
+   "fieldtype": "Float",
+   "label": "Basic"
+  },
+  {
+   "fieldname": "hra_c",
+   "fieldtype": "Float",
+   "label": "House Rent Allowance"
+  },
+  {
+   "fieldname": "increment_amount",
+   "fieldtype": "Float",
+   "label": "Increment Amount"
+  },
+  {
+   "fieldname": "increment_amount_column",
+   "fieldtype": "Column Break",
+   "label": "Increment Amount"
+  },
+  {
+   "fieldname": "basic_i",
+   "fieldtype": "Float",
+   "label": "Basic"
+  },
+  {
+   "fieldname": "hra_i",
+   "fieldtype": "Float",
+   "label": "House Rent Allowance"
+  },
+  {
+   "fieldname": "revised_salary_column",
+   "fieldtype": "Column Break",
+   "label": "Revised Salary"
+  },
+  {
+   "fieldname": "basic_r",
+   "fieldtype": "Float",
+   "label": "Basic"
+  },
+  {
+   "fieldname": "hra_r",
+   "fieldtype": "Float",
+   "label": "House Rent Allowance"
+  },
+  {
+   "fieldname": "arrear_details_section",
+   "fieldtype": "Section Break",
+   "label": "Arrear Details"
+  },
+  {
+   "fieldname": "salary_increment",
+   "fieldtype": "Link",
+   "label": "Salary Increment",
+   "options": "Salary Increment"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-23 12:39:46.460511",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "Arrear",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
