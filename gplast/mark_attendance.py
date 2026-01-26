@@ -12,7 +12,7 @@ from datetime import datetime, time
 @frappe.whitelist()
 def mark_att_manual():
     from_date='2026-01-04'
-    to_date='2026-01-05'
+    to_date='2026-01-04'
     checkins = frappe.db.sql(
         """select * from `tabEmployee Checkin` where date(time) between '%s' and '%s' order by time """%(from_date,to_date),as_dict=1)
     for c in checkins:
