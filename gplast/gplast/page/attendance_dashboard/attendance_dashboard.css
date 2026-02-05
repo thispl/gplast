@@ -1,0 +1,170 @@
+/* FILTER RIGHT ALIGN */
+.filter-section {
+	display: flex;
+	justify-content: flex-end;   /* 👈 right side */
+	gap: 12px;
+	margin-bottom: 25px;
+}
+
+.filter-item {
+	width: 150px;
+}
+
+/* COMMON SPACE BETWEEN SECTIONS */
+.section-gap {
+	margin-top: 25px;
+}
+
+/* CARD ROW GAP */
+.card-row {
+	display: flex;
+	gap: 15px;
+}
+.clickable-btn {
+	cursor: pointer;
+	transition: 0.3s;
+}
+.clickable-btn.active {
+	border-color: #d4af37; /* golden */
+	background: #fff6d6; /* yellow mixed golden */
+	color: #7a5a00;
+	font-weight: 600;
+}
+
+.custom-table {
+    border:1px solid black;
+    border-collapse:collapse;
+    width:100%;
+}
+.custom-table th,
+.custom-table td {
+    border:1px solid black;
+}
+.custom-table thead {
+    background:#f0f7ff;
+}
+
+.pagination-wrap {
+    margin-top:12px;
+    text-align:center;
+}
+
+.page-circle {
+    display:inline-block;
+    width:28px;
+    height:28px;
+    line-height:26px;
+    border:2px solid black;
+    border-radius:50%;
+    margin:0 5px;
+    cursor:pointer;
+    font-weight:500;
+}
+
+.page-circle.active {
+    background:#000;
+    color:#fff;
+}
+
+.overall-table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.overall-table thead th {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+
+	background: #d9e7ff;  
+	color: #123a6f;
+	font-weight: 700;
+
+	border-bottom: 2px solid #b6ccf5;
+}
+
+
+.overall-table th,
+.overall-table td {
+	border: 1px solid #e1e7ee;
+	padding: 6px 10px;
+}
+
+
+.overall-table tbody tr:nth-child(odd) {
+	background-color: #f6faff;  
+}
+
+.overall-table tbody tr:nth-child(even) {
+	background-color: #eaf2ff;  
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+/* FILTER BAR ALIGN */
+.overall-filter-bar {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 15px;
+	width: 100%;
+}
+
+.overall-filter-bar .frappe-control {
+	width: 260px;         
+}
+
+.overall-filter-bar .date-small {
+	width: 140px;          
+}
+
+.filter-section {
+    position: relative;
+    z-index: 2000;
+}
+
+/* Frappe Link / Select dropdown */
+.awesomplete,
+.awesomplete ul,
+.select2-container,
+.select2-dropdown {
+    z-index: 99999 !important;
+}
+
+/* Sticky table header - keep LOWER */
+#attendance_table thead th,
+.overall-table thead th {
+    position: sticky;
+    top: 0;
+    background: #eaf2ff;
+    z-index: 5;
+}
+
+/* Table wrapper should not cut dropdown */
+.table-section,
+#right-panel {
+    overflow: visible !important;
+}
+
+.table-header-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 8px;
+	padding: 6px 10px;
+	background: #f8fafc;
+	border: 1px solid #dbeafe;
+	border-radius: 6px;
+}
+
+.table-title {
+	font-weight: 600;
+	color: #1e3a8a;
+}

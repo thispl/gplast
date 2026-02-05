@@ -16,27 +16,92 @@ frappe.query_reports["Attendance Summary Report"] = {
 			"fieldtype": "Date",
 			"reqd": 1
 		},
+
+		// {
+		// 	"label": __("Employee"),
+		// 	"fieldname": "employee",
+		// 	"fieldtype": "Link",
+		// 	"options": "Employee",
+		// 	"on_change": function() {
+		// 		let employee = frappe.query_report.get_filter_value("employee");
+
+		// 		if (employee) {
+		// 			frappe.db.get_value(
+		// 				"Employee",
+		// 				employee,
+		// 				["employee_name", "designation_code", "designation", "department"]
+		// 			).then(r => {
+		// 				if (r.message) {
+		// 					frappe.query_report.set_filter_value("employee_name", r.message.employee_name);
+		// 					frappe.query_report.set_filter_value("designation_code", r.message.designation_code);
+		// 					frappe.query_report.set_filter_value("designation", r.message.designation);
+		// 					frappe.query_report.set_filter_value("department", r.message.department);
+		// 				}
+		// 			});
+		// 		} else {
+		// 			frappe.query_report.set_filter_value("employee_name", "");
+		// 			frappe.query_report.set_filter_value("designation_code", "");
+		// 			frappe.query_report.set_filter_value("designation", "");
+		// 			frappe.query_report.set_filter_value("department", "");
+		// 		}
+		// 	}
+		// },
+
 		{
 			"label": __("Employee"),
 			"fieldname": "employee",
 			"fieldtype": "Link",
 			"options": "Employee",
-			"reqd": 1,
+
+			"get_query": function () {
+
+				if (frappe.user_roles.includes("HR User")) {
+					return {
+						query: "gplast.gplast.report.attendance_summary_report.attendance_summary_report.get_all_active_employees"
+					};
+				}
+
+
+				else if (frappe.user_roles.includes("HOD")) {
+					return {
+						query: "gplast.gplast.report.attendance_summary_report.attendance_summary_report.get_employees_by_user_department"
+					};
+				}
+
+				return {
+					filters: {
+						status: "Active",
+						user_id: frappe.session.user
+					}
+				};
+			},
+
 			"on_change": function() {
 				let employee = frappe.query_report.get_filter_value("employee");
+
 				if (employee) {
-					frappe.db.get_value("Employee", employee, ["employee_name", "designation_code", "designation", "department"])
-						.then(r => {
-							if (r.message) {
-								frappe.query_report.set_filter_value("employee_name", r.message.employee_name);
-								frappe.query_report.set_filter_value("designation_code", r.message.designation_code);
-								frappe.query_report.set_filter_value("designation", r.message.designation);
-								frappe.query_report.set_filter_value("department", r.message.department);
-							}
-						});
+					frappe.db.get_value(
+						"Employee",
+						employee,
+						["employee_name", "designation_code", "designation", "department"]
+					).then(r => {
+						if (r.message) {
+							frappe.query_report.set_filter_value("employee_name", r.message.employee_name);
+							frappe.query_report.set_filter_value("designation_code", r.message.designation_code);
+							frappe.query_report.set_filter_value("designation", r.message.designation);
+							frappe.query_report.set_filter_value("department", r.message.department);
+						}
+					});
+				} else {
+					frappe.query_report.set_filter_value("employee_name", "");
+					frappe.query_report.set_filter_value("designation_code", "");
+					frappe.query_report.set_filter_value("designation", "");
+					frappe.query_report.set_filter_value("department", "");
 				}
 			}
 		},
+
+
 		{
 			"label": __("Employee Name"),
 			"fieldname": "employee_name",

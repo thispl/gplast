@@ -155,8 +155,9 @@ class CustomSalarySlip(SalarySlip):
 			'attendance_date': ['between', [self.start_date, self.end_date]],
 			'docstatus': 1
 		}
-		self.b_shift = frappe.db.count('Attendance', {**base_filters, 'shift': 'B'})
-		self.c_shift = frappe.db.count('Attendance', {**base_filters, 'shift': 'C'})
+		
+		self.b_shift = frappe.db.count('Attendance', {**base_filters, 'shift': 'B','weekly_off': 0})
+		self.c_shift = frappe.db.count('Attendance', {**base_filters, 'shift': 'C','weekly_off': 0})
 		self.late_count = frappe.db.count('Attendance', {**base_filters, 'late_entry': 1 ,"late_entry_time":['<=',"00:15:59"]})
 		self.late_count_deduction = 0
 		if self.late_count > 0:

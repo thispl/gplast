@@ -8,7 +8,15 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_6qj1b",
-  "leave_application_approval"
+  "la_approval",
+  "section_break_rkagg",
+  "od_approval",
+  "section_break_fjl4f",
+  "mp_approval",
+  "section_break_rcvqx",
+  "pr_approval",
+  "section_break_tvedm",
+  "ot_approval"
  ],
  "fields": [
   {
@@ -16,17 +24,57 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "leave_application_approval",
+   "fieldname": "la_approval",
    "fieldtype": "Table",
    "label": "Leave Application Approval",
    "options": "LA Approval"
+  },
+  {
+   "fieldname": "section_break_rkagg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "od_approval",
+   "fieldtype": "Table",
+   "label": "On Duty Approval",
+   "options": "OD Approval"
+  },
+  {
+   "fieldname": "section_break_fjl4f",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "mp_approval",
+   "fieldtype": "Table",
+   "label": "Miss Punch Approval",
+   "options": "MP Approval"
+  },
+  {
+   "fieldname": "section_break_rcvqx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "pr_approval",
+   "fieldtype": "Table",
+   "label": "Permission Approval",
+   "options": "PR Approval"
+  },
+  {
+   "fieldname": "section_break_tvedm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "ot_approval",
+   "fieldtype": "Table",
+   "label": "Overtime Approval",
+   "options": "OT Approval"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-01-22 19:51:10.410720",
+ "modified": "2026-02-02 11:36:00.516140",
  "modified_by": "Administrator",
  "module": "GPLAST",
  "name": "Approval Summary",

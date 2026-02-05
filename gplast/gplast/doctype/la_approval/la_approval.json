@@ -10,12 +10,19 @@
   "employee",
   "employee_name",
   "leave_type",
+  "workflow_state",
+  "leave_approver",
+  "leave_approver_2",
   "column_break_tgg1w",
   "from_date",
   "to_date",
   "half_day",
   "half_day_date",
-  "total_leave_days"
+  "total_leave_days",
+  "request_date",
+  "session",
+  "leave_approver_3",
+  "leave_approver_4"
  ],
  "fields": [
   {
@@ -87,12 +94,50 @@
    "in_standard_filter": 1,
    "label": "Leave Type",
    "options": "Leave Type"
+  },
+  {
+   "fieldname": "workflow_state",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Workflow State",
+   "read_only": 1
+  },
+  {
+   "fieldname": "request_date",
+   "fieldtype": "Date",
+   "label": "Request Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "session",
+   "fieldtype": "Data",
+   "label": "Session"
+  },
+  {
+   "fieldname": "leave_approver",
+   "fieldtype": "Data",
+   "label": "Leave Approver 1"
+  },
+  {
+   "fieldname": "leave_approver_2",
+   "fieldtype": "Data",
+   "label": "Leave Approver 2"
+  },
+  {
+   "fieldname": "leave_approver_3",
+   "fieldtype": "Data",
+   "label": "Leave Approver 3"
+  },
+  {
+   "fieldname": "leave_approver_4",
+   "fieldtype": "Data",
+   "label": "Leave Approver 4"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-01-22 19:53:06.206306",
+ "modified": "2026-01-29 18:16:44.964026",
  "modified_by": "Administrator",
  "module": "GPLAST",
  "name": "LA Approval",

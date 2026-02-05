@@ -1,0 +1,150 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-29 18:21:34.470545",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "od_application",
+  "employee",
+  "employee_name",
+  "workflow_state",
+  "shift",
+  "leave_approver_1",
+  "leave_approver_2",
+  "column_break_tgg1w",
+  "from_date",
+  "to_date",
+  "from_time",
+  "to_time",
+  "od_hours",
+  "total_number_of_days",
+  "session",
+  "leave_approver_3",
+  "leave_approver_4"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "workflow_state",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Workflow State",
+   "read_only": 1
+  },
+  {
+   "fieldname": "leave_approver_2",
+   "fieldtype": "Data",
+   "label": "Leave Approver 2"
+  },
+  {
+   "fieldname": "column_break_tgg1w",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "From Date"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "To Date"
+  },
+  {
+   "fieldname": "session",
+   "fieldtype": "Data",
+   "label": "Session"
+  },
+  {
+   "fieldname": "leave_approver_3",
+   "fieldtype": "Data",
+   "label": "Leave Approver 3"
+  },
+  {
+   "fieldname": "leave_approver_4",
+   "fieldtype": "Data",
+   "label": "Leave Approver 4"
+  },
+  {
+   "fieldname": "od_application",
+   "fieldtype": "Link",
+   "label": "OD Application",
+   "options": "Leave Application"
+  },
+  {
+   "default": "0",
+   "fieldname": "from_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "From Time"
+  },
+  {
+   "fieldname": "to_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "To Time"
+  },
+  {
+   "fieldname": "total_number_of_days",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Total Number of Days"
+  },
+  {
+   "fieldname": "shift",
+   "fieldtype": "Data",
+   "label": "Shift",
+   "read_only": 1
+  },
+  {
+   "fieldname": "od_hours",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "OD Hours"
+  },
+  {
+   "fieldname": "leave_approver_1",
+   "fieldtype": "Data",
+   "label": "Leave Approver 1"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-01-29 18:53:16.075704",
+ "modified_by": "Administrator",
+ "module": "GPLAST",
+ "name": "OD Approval",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

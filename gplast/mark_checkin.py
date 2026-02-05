@@ -8,8 +8,8 @@ from datetime import datetime
 def mark_employee_checkin_manual():
     url = "http://115.244.98.52:86/api/v2/WebAPI/GetDeviceLogs"
     api_key = "162618022422" 
-    from_date = '2026-01-25'  
-    to_date = '2026-01-26'
+    from_date = '2026-02-05'  
+    to_date = '2026-02-05'
 
     params = {
         "APIKey": api_key,
@@ -31,6 +31,7 @@ def mark_employee_checkin_manual():
                 ec.employee = emp_id
                 ec.time = log_date
                 ec.device_id = device_id
+                ec.device_name = frappe.db.get_value("Checkin Device",{"serial_number":device_id},"name") or""
                 ec.log_type = "IN"
                 ec.save(ignore_permissions=True)
                 print(log_date)

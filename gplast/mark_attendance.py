@@ -11,15 +11,15 @@ from collections import Counter
 from datetime import datetime, time
 @frappe.whitelist()
 def mark_att_manual():
-    from_date='2026-01-04'
-    to_date='2026-01-04'
+    from_date='2026-01-01'
+    to_date='2026-01-03'
     checkins = frappe.db.sql(
         """select * from `tabEmployee Checkin` where date(time) between '%s' and '%s' order by time """%(from_date,to_date),as_dict=1)
     for c in checkins:
         employee = frappe.db.exists('Employee',{'status':'Active','date_of_joining':['<=',from_date],'name':c.employee})
         left_emp = frappe.db.exists('Employee',{'status':'Left','date_of_joining':['<=',from_date],'relieving_date': ['>=',to_date], 'name':c.employee})
 
-        if employee or left_emp:     
+        if employee or left_emp: 
             mark_attendance_from_checkin_new(c.name,c.employee,c.time)
     mark_absent(from_date,to_date)
     assigned_shift(from_date, to_date)
@@ -33,12 +33,11 @@ def mark_att_manual():
 # This code is used for manual testing
 @frappe.whitelist()
 def mark_att_with_employee_manual():
-    from_date='2026-01-04'
-    to_date='2026-01-05'
-    employee='10101'
+    from_date='2026-01-01'
+    to_date='2026-02-01'
+    employee='2502'
     checkins = frappe.db.sql(
         """select * from `tabEmployee Checkin` where date(time) between '%s' and '%s' and employee ='%s' order by time """%(from_date,to_date,employee),as_dict=1)
-
     for c in checkins:
         employee_data = frappe.db.exists('Employee',{'status':'Active','date_of_joining':['<=',from_date],'name':c.employee})
         left_emp = frappe.db.exists('Employee',{'status':'Left','date_of_joining':['<=',from_date],'relieving_date': ['>=',to_date], 'name':c.employee})
@@ -168,7 +167,9 @@ def mark_wh(from_date, to_date):
 
         in_time = att.get('in_time')
         out_time = att.get('out_time')
-
+        if not in_time or not out_time or not att.shift:
+            frappe.db.set_value('Attendance', att.name, 'wh', "0.000") 
+            frappe.db.set_value('Attendance', att.name, 'total_working_hours', "0.000")
         if in_time and out_time:
             if isinstance(in_time, str):
                 in_time = datetime.strptime(in_time, '%Y-%m-%d %H:%M:%S')
@@ -249,7 +250,9 @@ def mark_wh_emp(from_date, to_date, emp):
 
         in_time = att.get('in_time')
         out_time = att.get('out_time')
-
+        if not in_time or not out_time or not att.shift:
+            frappe.db.set_value('Attendance', att.name, 'wh', "0.000") 
+            frappe.db.set_value('Attendance', att.name, 'total_working_hours', "0.000")
         if in_time and out_time:
             if isinstance(in_time, str):
                 in_time = datetime.strptime(in_time, '%Y-%m-%d %H:%M:%S')
@@ -1520,7 +1523,6 @@ def ot_calculation_with_employee(from_date,to_date,employee):
                             else:
                                 ot_hr = '0.0'	
                             frappe.db.set_value("Attendance",att.name,"overtime_hours",ot_hr) 
-                            # create_update_delete_ot(att, ot_hr)
                     else:    
                         ot_hr = '0.0'
                         frappe.db.set_value("Attendance",att.name,"ot_hours","00:00:00")
@@ -1582,6 +1584,7 @@ def ot_calculation_with_employee(from_date,to_date,employee):
                     frappe.db.set_value("Attendance",att.name,"ot_hours","00:00:00")
                     frappe.db.set_value("Attendance",att.name,"overtime_hours","0.0") 
                     # create_update_delete_ot(att, ot_hr) z       
+            create_update_delete_ot(att, ot_hr)
 
 
 @frappe.whitelist()
@@ -2835,6 +2838,7 @@ def mark_attendance_from_checkin_new(checkin,employee,time):
     if checkins:
         start_midnight = datetime.strptime("00:00:00", "%H:%M:%S").time()
         end_early = datetime.strptime("02:00:00", "%H:%M:%S").time()
+        mrg_time = datetime.strptime("06:00:00", "%H:%M:%S").time()
         late_start = datetime.strptime("22:00:00", "%H:%M:%S").time()
         late_end = datetime.strptime("23:59:59", "%H:%M:%S").time()
         yesterday_date = att_date - timedelta(days=1)            
@@ -2863,11 +2867,19 @@ def mark_attendance_from_checkin_new(checkin,employee,time):
                     frappe.db.set_value("Attendance", yesterday_att_check, "out_time", early_punches[-1]["time"])
                 checkins = later_punches
             elif y_shift == "B":
-                early_punches = [c for c in checkins if c["time"].time() < datetime.strptime("09:00:00", "%H:%M:%S").time()]
+                print(" HI A1")
+                early_punches = [c for c in checkins if c["time"].time() < datetime.strptime("06:00:00", "%H:%M:%S").time()]
                 if early_punches :
                     frappe.db.set_value("Attendance", yesterday_att_check, "out_time", early_punches[-1]["time"])
-                later_punches = [c for c in checkins if c["time"].time() >= datetime.strptime("09:00:00", "%H:%M:%S").time()]
+                
+                later_punches = [c for c in checkins if c["time"].time() >= datetime.strptime("06:00:00", "%H:%M:%S").time()]
                 checkins = later_punches
+            else:
+                early_punches = [c for c in checkins if c["time"].time() < datetime.strptime("06:00:00", "%H:%M:%S").time()]
+                if early_punches :
+                    frappe.db.set_value("Attendance", yesterday_att_check, "out_time", early_punches[-1]["time"])   
+                    later_punches = [c for c in checkins if c["time"].time() >= datetime.strptime("06:00:00", "%H:%M:%S").time()]
+                    checkins = later_punches
             if not y_in:
                 in_datetime = datetime.combine(att_date, att_time)
                 if y_out:
@@ -2904,9 +2916,15 @@ def mark_attendance_from_checkin_new(checkin,employee,time):
                         checkins =later_punches
                     frappe.db.set_value('Employee Checkin',checkin,'skip_auto_attendance','1')
                     frappe.db.set_value('Employee Checkin',checkin,'attendance',yesterday_att_check)
+            if yesterday_att_check:
+                early_punches = [c for c in checkins if c["time"].time() < datetime.strptime("06:00:00", "%H:%M:%S").time()]
+                if early_punches:
+                    frappe.db.set_value("Attendance", yesterday_att_check, "out_time", early_punches[-1]["time"])
+                    later_punches = [c for c in checkins if c["time"].time() >= datetime.strptime("06:00:00", "%H:%M:%S").time()]
+                    checkins = later_punches
             y_shift=frappe.db.get_value("Attendance", yesterday_att_check, "shift")    
         elif datetime.strptime("06:00:00", "%H:%M:%S").time() <= att_time <= datetime.strptime("10:00:00", "%H:%M:%S").time():
-            print(" HI B")
+            print("HI B")
             early_punches = [c for c in checkins if c["time"].time() < datetime.strptime("10:00:00", "%H:%M:%S").time()]
             later_punches = [c for c in checkins if c["time"].time() >= datetime.strptime("10:00:00", "%H:%M:%S").time()]
             y_shift = frappe.db.get_value("Attendance",{"employee": employee, "attendance_date": yesterday_date,"docstatus":["!=",2]},[ "shift"])
@@ -2915,11 +2933,19 @@ def mark_attendance_from_checkin_new(checkin,employee,time):
                     frappe.db.set_value("Attendance", yesterday_att_check, "out_time", early_punches[-1]["time"])
                 checkins = later_punches
             elif y_shift == "B":
-                early_punches = [c for c in checkins if c["time"].time() < datetime.strptime("09:00:00", "%H:%M:%S").time()]
+                early_punches = [c for c in checkins if c["time"].time() < datetime.strptime("06:00:00", "%H:%M:%S").time()]
                 if early_punches :
                     frappe.db.set_value("Attendance", yesterday_att_check, "out_time", early_punches[-1]["time"])
-                later_punches = [c for c in checkins if c["time"].time() >= datetime.strptime("09:00:00", "%H:%M:%S").time()]
-                checkins = later_punches  
+                later_punches = [c for c in checkins if c["time"].time() >= datetime.strptime("06:00:00", "%H:%M:%S").time()]
+                checkins = later_punches 
+            else:
+                print("HI J1")
+                early_punches = [c for c in checkins if c["time"].time() < datetime.strptime("06:00:00", "%H:%M:%S").time()]
+                print(early_punches , "Early")
+                if early_punches:
+                    frappe.db.set_value("Attendance", yesterday_att_check, "out_time", early_punches[-1]["time"])
+                    later_punches = [c for c in checkins if c["time"].time() >= datetime.strptime("06:00:00", "%H:%M:%S").time()]
+                    checkins = later_punches     
         else :
             y_shift = frappe.db.get_value("Attendance",{"employee": employee, "attendance_date": yesterday_date,"docstatus":["!=",2]},[ "shift"])
             if y_shift == "C":
@@ -2939,32 +2965,33 @@ def mark_attendance_from_checkin_new(checkin,employee,time):
                     if early_punches :
                         frappe.db.set_value("Attendance", yesterday_att_check, "out_time", early_punches[-1]["time"])
             elif y_shift == "B":
-                later_punches = [c for c in checkins if c["time"].time() >= datetime.strptime("09:00:00", "%H:%M:%S").time()]
-                early_punches_b = [c for c in checkins if c["time"].time() < datetime.strptime("09:00:00", "%H:%M:%S").time()]
+                later_punches = [c for c in checkins if c["time"].time() >= datetime.strptime("06:00:00", "%H:%M:%S").time()]
+                early_punches_b = [c for c in checkins if c["time"].time() < datetime.strptime("06:00:00", "%H:%M:%S").time()]
                 if later_punches:
                     checkins = later_punches
                 else :
                     frappe.db.set_value("Attendance", yesterday_att_check, "out_time", early_punches_b[-1]["time"])
                     if y_in == y_out:
                         frappe.db.set_value("Attendance", yesterday_att_check, "out_time", None)
-            elif not y_shift and not y_in and not y_out:
-                print("HI J")
-                early_punches = [c for c in checkins if c["time"].time() >= datetime.strptime("05:30:00", "%H:%M:%S").time()]
-                frappe.db.set_value("Attendance", yesterday_att_check, "out_time", None)
-                later_punches = [c for c in checkins if c["time"].time() >= datetime.strptime("05:30:00", "%H:%M:%S").time()]
-                checkins = later_punches
+            else:
+                early_punches = [c for c in checkins if c["time"].time() < datetime.strptime("06:00:00", "%H:%M:%S").time()]
+                if early_punches:
+                    frappe.db.set_value("Attendance", yesterday_att_check, "out_time", early_punches[-1]["time"])
+                    later_punches = [c for c in checkins if c["time"].time() >= datetime.strptime("06:00:00", "%H:%M:%S").time()]
+                    checkins = later_punches
         if y_shift:
             if (y_shift == "C" or y_shift == 'PP1'): 
                 later_punches = [c for c in checkins if c["time"].time() >= datetime.strptime("10:00:00", "%H:%M:%S").time()]
                 checkins = later_punches
             elif (y_shift == "B" ): 
-                later_punches = [c for c in checkins if c["time"].time() >= datetime.strptime("09:00:00", "%H:%M:%S").time()]
+                later_punches = [c for c in checkins if c["time"].time() >= datetime.strptime("06:00:00", "%H:%M:%S").time()]
                 checkins = later_punches   
             elif (y_shift == "A" or y_shift =="G1") and y_wh >= 12.000:
-                    later_punches = [c for c in checkins if c["time"].time() >= datetime.strptime("06:00:00", "%H:%M:%S").time()]
-                    checkins = later_punches     
+                later_punches = [c for c in checkins if c["time"].time() >= datetime.strptime("06:00:00", "%H:%M:%S").time()]
+                checkins = later_punches     
         else:
             pass        
+        print(checkins)
         if len(checkins) >= 2:
             in_time = checkins[0].time
             out_time = checkins[-1].time
@@ -3043,8 +3070,6 @@ def mark_attendance_from_checkin_new(checkin,employee,time):
                     shift = common_shift[0]
                 else:
                     shift = '' 
-            print(common_shift , "Common")
-            print(shift)
             att = frappe.db.exists('Attendance',{'employee':employee,'attendance_date':att_date})
             attended_shift = shift
             assigned_shift = ''
@@ -3082,8 +3107,7 @@ def mark_attendance_from_checkin_new(checkin,employee,time):
                             shift = dshift
                         else:
                             shift=''  
-            print(assigned_shift , "Ass")  
-            print(shift, "SHIFT")                
+            print("Assigned Shift ", assigned_shift)
             if assigned_shift and attended_shift and assigned_shift == attended_shift:
                 shift_status = "Matched"
             else:
@@ -3142,8 +3166,6 @@ def mark_attendance_from_checkin_new(checkin,employee,time):
             else:
                 att = frappe.db.exists('Attendance',{'employee':employee,'attendance_date':att_date})
                 hh = check_holiday_new(att_date,employee)
-                print(att, "Att")
-                print(hh , "HH")
                 if hh == "WW":
                     frappe.db.set_value("Attendance",att,'weekly_off',1)
                 else:
